@@ -82,3 +82,96 @@ section h2{
     align-items: center;
     text-align: center;
 }
+/* Sección CONTENIDO */
+.seccion-contenido{
+    max-width: 700px;
+}
+.seccion-contenido h2{
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+.seccion-contenido p{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+/* Botón */
+.boton,button{
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff8dc6;
+    color: white;
+   text-decoration:none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.boton:hover, button:hover{
+    background-color: #ffa8d9;
+    color: #ffe0ff;
+}
+
+/* Sección SOBRE MÍ */
+.sobre-mi-contenido{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.sobre-mi-contenido img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #ffbcde;
+    border: 5px solid #ff8dc6;
+}
+.sobre-mi-contenido p{
+    font-size: 18px;
+}
+/* Sección HABILIDADES */
+.lista-habilidades{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+.lista-habilidades li{
+    background-color: #f7a1ea;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 3px solid #f388cf;
+    font-weight: bold;
+}
+/* Sección MIS PROYECTOS */
+.contenedor-proyectos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.proyecto{
+    flex: 1;
+    min-width: 250px;
+    background-color: #f7a1ea;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #f388cf;
+}
+.proyecto h3{
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.proyecto a{
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+

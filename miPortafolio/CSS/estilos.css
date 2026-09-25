@@ -175,3 +175,76 @@ section h2{
     font-weight: bold;
 }
 
+/* Sección FORMULARIO */
+form{
+    max-width: 500px;
+    margin: 0 auto;
+}
+.campo{
+    margin-bottom: 20px;
+}
+.campo label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.campo input, .campo textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.campo textarea{
+    resize: vertical;
+    min-height: 100px;
+}
+form button{
+    width: 100%;
+    background-color: #ff8dc6;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* PIE DE PAGINA */
+footer{
+    background-color: #ffa8d9;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+footer p{
+    margin: 0;
+    font-size: 16px;
+}
+/* Diseño responsive */
+@media (max-width: 768px){
+    header h1{
+        font-size: 32px;
+    }
+    nav{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    section{
+        padding: 40px 20px;
+    }
+    .seccion-inicio h2{
+        flex-direction: column;
+        text-align: center;
+    }
+    .sobre-mi-contenido{
+        flex-direction: column;
+        text-align: center;
+    }
+    .contenedor-proyectos{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+

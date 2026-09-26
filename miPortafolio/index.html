@@ -8,10 +8,11 @@
 </head>
 <body>
     <!-- encabezado -->
-    <header>
-        <h1>Mi portafolio</h1>
-        <p>Bienvenido a mi Sitio Web personal</p>
-    </header>
+   <header> 
+    <h1>Mi portafolio</h1> 
+    <p id="bienvenida">Bienvenido a mi Sitio Web personal</p>
+    <button id="botonBienvenida">Cambiar bienvenida</button>
+</header>
 <!-- Navegación-->
 
 <nav>
@@ -43,15 +44,19 @@
     </div>
 </section>
 <!-- Sección habilidades -->
- <section>
+<section> 
     <h2>MIS HABILIDADES</h2>
-    <ul class="lista-habilidades">
-        <li>JAVA</li>
-        <li>SCRATCH</li>
-        <li>PSEINT</li>
-        <li>CISCO PACKET TRACER</li>
-        <li>MySQL</li>
-    </ul>
+
+    <button id="botonColor">Cambiar color</button>
+    <button id="botonFuente">Cambiar tipografía</button>
+
+    <ul class="lista-habilidades"> 
+        <li>JAVA</li> 
+        <li>SCRATCH</li> 
+        <li>PSEINT</li> 
+        <li>CISCO PACKET TRACER</li> 
+        <li>MySQL</li> 
+    </ul> 
 </section>
 
 <!-- Sección proyectos -->
@@ -74,7 +79,7 @@
 <!-- Sección contacto -->
  <section id ="contacto">
     <h2>CONTACTAME</h2>
-    <form>
+    <form id="formulario">
         <div class="campo">
             <label for="nombre">Nombre</label>
             <input
@@ -111,5 +116,6 @@
     <p>Practica de Programación Web todos los derechos reservados
     </p>
 </footer>
+<script src="./JS/script.js"></script>
 </body>
 </html>

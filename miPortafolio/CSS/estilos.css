@@ -247,4 +247,46 @@ footer p{
         align-items: center;
     }
 }
+/* Tabla de administración */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+thead{
+    background-color: #ff8dc6;
+    color: white;
+}
+th, td{
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 15px;
+}
+tbody tr:nth-child(even){
+    background-color: #ffe0ff;
+}
+td a{
+    color: #333;
+    margin-right: 8px;
+    font-size: 20px;
+    text-decoration: none;
+}
+td a:hover{
+    color: #ff8dc6;
+}
+
+/* Iconos del nav */
+nav a i{
+    font-size: 22px;
+}
+
+/* Tabla con scroll en celular */
+@media (max-width: 768px){
+    table{
+        display: block;
+        overflow-x: auto;
+    }
+}
 

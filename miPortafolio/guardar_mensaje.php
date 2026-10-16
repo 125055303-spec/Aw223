@@ -11,8 +11,10 @@ $sqlInsert = "INSERT INTO mensajes (nombre, correo, mensaje) VALUES (?, ?, ?)";
 $stmt = $conexion->prepare($sqlInsert);
 $stmt->bind_param("sss", $nombre, $correo, $mensaje);
 if ($stmt->execute()) {
-    echo "Mensaje guardado exitosamente";
+    header("Location:index.php?estado=exito");
 } else {
-    echo "Error al guardar el mensaje: " . $conexion->error;
+    header("Location:index.php?estado=error");
 }
+
+
 

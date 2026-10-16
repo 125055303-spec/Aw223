@@ -45,22 +45,17 @@
                  <td>" . $arrMsj['timeStamps']. "</td>
                  <td>
   <a href='editar.php'>
-    <img src='Imágenes/editar.png' alt='Editar' width='25'>
+    <img src='Imagenes/editar.png' alt='Editar' width='25'>
 </a>
 
 <a href='borrar.php'>
-    <img src='Imágenes/boteBasura.png' alt='Borrar' width='25'>
+    <img src='Imagenes/boteBasura.png' alt='Borrar' width='25'>
 </a>
-                      </td>"
+                      </td>".
                  "</tr>";
             }
             ?>
-            <tr>
-                <td>Nombre</td>
-                <td>Correo</td>
-                <td>Mensaje</td>
-                <td>Fecha</td>
-            </tr>
+            
 
         </tbody>
     </table>

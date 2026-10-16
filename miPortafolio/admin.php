@@ -23,35 +23,45 @@
     <h2>Mensajes Recibidos</h2>
     <table>
         <thead>
+
             <tr>
-                <th>ID</th>
+
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Mensaje</th>
+                <th>Fecha</th>
                 <th>Opciones</th>
             </tr>
         </thead>
         <tbody>
+            <?php
+            require_once 'consulta_mensaje.php';
+            $rsMsj = consultaMensajes();
+            while($arrMsj = mysqli_fetch_array($rsMsj)) {
+                echo "<tr>
+                 <td>" . $arrMsj['nombre'] . "</td>
+                 <td>" . $arrMsj['correo'] . "</td>
+                 <td>" . $arrMsj['mensaje'] . "</td>
+                 <td>" . $arrMsj['timeStamps']. "</td>
+                 <td>
+  <a href='editar.php'>
+    <img src='Imágenes/editar.png' alt='Editar' width='25'>
+</a>
+
+<a href='borrar.php'>
+    <img src='Imágenes/boteBasura.png' alt='Borrar' width='25'>
+</a>
+                      </td>"
+                 "</tr>";
+            }
+            ?>
             <tr>
-                <td>1</td>
-                <td>Ana</td>
-                <td>ana@example.com</td>
-                <td>Hola, me interesa tu portafolio.</td>
-                <td>
-                    <a href="editar.php?id=1"><i class="bi bi-pencil-square"></i></a>
-                    <a href="borrar.php?id=1"><i class="bi bi-trash"></i></a>
-                </td>
+                <td>Nombre</td>
+                <td>Correo</td>
+                <td>Mensaje</td>
+                <td>Fecha</td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>José</td>
-                <td>jose@example.com</td>
-                <td>Quisiera más información sobre tus proyectos.</td>
-                <td>
-                    <a href="editar.php?id=2"><i class="bi bi-pencil-square"></i></a>
-                    <a href="borrar.php?id=2"><i class="bi bi-trash"></i></a>
-                </td>
-            </tr>
+
         </tbody>
     </table>
 </section>

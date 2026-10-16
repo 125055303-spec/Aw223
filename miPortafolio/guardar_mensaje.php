@@ -11,9 +11,9 @@ $sqlInsert = "INSERT INTO mensajes (nombre, correo, mensaje) VALUES (?, ?, ?)";
 $stmt = $conexion->prepare($sqlInsert);
 $stmt->bind_param("sss", $nombre, $correo, $mensaje);
 if ($stmt->execute()) {
-    header("Location:index.php?estado=exito");
+    header("Location:index.html?estado=exito");
 } else {
-    header("Location:index.php?estado=error");
+    header("Location:index.html?estado=error");
 }
 
 

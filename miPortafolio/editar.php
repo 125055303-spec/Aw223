@@ -1,3 +1,28 @@
+<?php
+include 'conexion.php';
+
+if (isset($_POST['id'])) {
+    $id      = $_POST['id'];
+    $nombre  = trim($_POST['nombre']);
+    $correo  = trim($_POST['correo']);
+    $mensaje = trim($_POST['mensaje']);
+
+    if ($nombre == '' || $correo == '' || $mensaje == '') {
+        echo "<script>alert('No se permiten campos vacíos'); history.back();</script>";
+        exit;
+    }
+
+    $sql = "UPDATE mensajes SET nombre='$nombre', correo='$correo', mensaje='$mensaje' WHERE id=$id";
+    mysqli_query($conn, $sql);
+
+    echo "<script>alert('Registro actualizado'); window.location='admin.php';</script>";
+    exit;
+}
+
+$id = $_GET['id'];
+$resultado = mysqli_query($conexion, "SELECT * FROM mensajes WHERE id=$id");
+$fila = mysqli_fetch_assoc($resultado);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,18 +47,19 @@
 <main>
 <section>
     <h2>Editar Mensaje</h2>
-    <form action="#" method="post">
+    <form action="editar.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
         <div class="campo">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" value="<?php echo $fila['nombre']; ?>">
         </div>
         <div class="campo">
             <label for="correo">Correo electrónico</label>
-            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" value="<?php echo $fila['correo']; ?>">
         </div>
         <div class="campo">
             <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+            <textarea id="mensaje" name="mensaje" rows="5"><?php echo $fila['mensaje']; ?></textarea>
         </div>
         <button type="submit">Actualizar Mensaje</button>
     </form>

@@ -1,18 +1,15 @@
 <?php
 include 'conexion.php';
 
-// Comprobar que se recibió el ID
 if (isset($_GET['id'])) {
 
     $id = (int) $_GET['id'];
 
-    // Preparar la consulta para borrar el mensaje
     $sql = "DELETE FROM mensajes WHERE id = ?";
     $stmt = mysqli_prepare($conexion, $sql);
 
     mysqli_stmt_bind_param($stmt, "i", $id);
 
-    // Ejecutar la eliminación
     if (mysqli_stmt_execute($stmt)) {
 
         if (mysqli_stmt_affected_rows($stmt) > 0) {

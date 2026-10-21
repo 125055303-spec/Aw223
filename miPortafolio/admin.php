@@ -17,7 +17,7 @@
 
 <nav>
     <a href="index.html">
-        <img src="Imagenes/casa.png"  width="30">
+        <img src="Imagenes/casa.png" width="30" alt="Inicio">
     </a>
 </nav>
 
@@ -45,19 +45,19 @@
                 while ($arrMsj = mysqli_fetch_array($rsMsj)) {
 
                     echo "<tr>
-                        <td>" . htmlspecialchars($arrMsj['nombre']) . "</td>
-                        <td>" . htmlspecialchars($arrMsj['correo']) . "</td>
-                        <td>" . htmlspecialchars($arrMsj['mensaje']) . "</td>
-                        <td>" . htmlspecialchars($arrMsj['timeStamps']) . "</td>
+                        <td>" . $arrMsj['nombre'] . "</td>
+                        <td>" . $arrMsj['correo'] . "</td>
+                        <td>" . $arrMsj['mensaje'] . "</td>
+                        <td>" . $arrMsj['timeStamps'] . "</td>
 
                         <td>
                             <a href='editar.php?id=" . $arrMsj['id'] . "'>
-                                <img src='Imagenes/editar.png' alt='Editar' width='25'>
+                                <img src='Imagenes/editar.png' width='25'>
                             </a>
 
                             <a href='borrar.php?id=" . $arrMsj['id'] . "'
                                onclick=\"return confirm('¿Estás seguro de borrar este mensaje?');\">
-                                <img src='Imagenes/boteBasura.png' alt='Borrar' width='25'>
+                                <img src='Imagenes/boteBasura.png'  width='25'>
                             </a>
                         </td>
                     </tr>";

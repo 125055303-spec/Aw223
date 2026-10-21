@@ -26,15 +26,9 @@ if (isset($_POST['id'])) {
     $stmt = mysqli_prepare($conexion, $sql);
 
     mysqli_stmt_bind_param(
-        $stmt,
-        "sssi",
-        $nombre,
-        $correo,
-        $mensaje,
-        $id
+        $stmt, "sssi", $nombre, $correo,$mensaje, $id
     );
 
-    // Ejecutar la actualización
     if (mysqli_stmt_execute($stmt)) {
         echo "<script>
             alert('Mensaje actualizado correctamente');
@@ -99,15 +93,11 @@ if (!$fila) {
 
 <nav>
     <a href="admin.php">
-        <img src="Imagenes/regresar.png"
-             alt="Regresar a administración"
-             width="25">
+        <img src="Imagenes/regresar.png" width="25">
     </a>
 
     <a href="index.html">
-        <img src="Imagenes/casa.png"
-             alt="Ir al inicio"
-             width="25">
+        <img src="Imagenes/casa.png" width="25">
     </a>
 </nav>
 
@@ -118,7 +108,7 @@ if (!$fila) {
     <form action="editar.php" method="post">
 
         <input type="hidden" name="id"
-               value="<?php echo htmlspecialchars($fila['id']); ?>">
+               value="<?php echo $fila['id']; ?>">
 
         <div class="campo">
             <label for="nombre">Nombre</label>
@@ -127,7 +117,7 @@ if (!$fila) {
                    id="nombre"
                    name="nombre"
                    placeholder="Escribe tu nombre"
-                   value="<?php echo htmlspecialchars($fila['nombre']); ?>"
+                   value="<?php echo $fila['nombre']; ?>"
                    required>
         </div>
 
@@ -138,7 +128,7 @@ if (!$fila) {
                    id="correo"
                    name="correo"
                    placeholder="ejemplo@correo.com"
-                   value="<?php echo htmlspecialchars($fila['correo']); ?>"
+                   value="<?php echo $fila['correo']; ?>"
                    required>
         </div>
 
@@ -148,7 +138,7 @@ if (!$fila) {
             <textarea id="mensaje"
                       name="mensaje"
                       rows="5"
-                      required><?php echo htmlspecialchars($fila['mensaje']); ?></textarea>
+                      required><?php echo $fila['mensaje']; ?></textarea>
         </div>
 
         <button type="submit" name="actualizar">

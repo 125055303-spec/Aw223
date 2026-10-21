@@ -10,7 +10,7 @@
 <body>
 
 <header>
-    <h1>Zona Administracion</h1>
+    <h1>Zona Administración</h1>
     <p>Mensajes Recibidos</p>
 </header>
 
@@ -21,11 +21,10 @@
 <main>
 <section>
     <h2>Mensajes Recibidos</h2>
+
     <table>
         <thead>
-
             <tr>
-
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Mensaje</th>
@@ -33,30 +32,35 @@
                 <th>Opciones</th>
             </tr>
         </thead>
+
         <tbody>
             <?php
             require_once 'consulta_mensaje.php';
-            $rsMsj = consultaMensajes();
-            while($arrMsj = mysqli_fetch_array($rsMsj)) {
-                echo "<tr>
-                 <td>" . $arrMsj['nombre'] . "</td>
-                 <td>" . $arrMsj['correo'] . "</td>
-                 <td>" . $arrMsj['mensaje'] . "</td>
-                 <td>" . $arrMsj['timeStamps']. "</td>
-                 <td>
-  <a href='editar.php'>
-    <img src='Imagenes/editar.png' alt='Editar' width='25'>
-</a>
 
-<a href='borrar.php'>
-    <img src='Imagenes/boteBasura.png' alt='Borrar' width='25'>
+            $rsMsj = consultaMensajes();
+
+            while ($arrMsj = mysqli_fetch_array($rsMsj)) {
+
+                echo "<tr>
+                    <td>" . htmlspecialchars($arrMsj['nombre']) . "</td>
+                    <td>" . htmlspecialchars($arrMsj['correo']) . "</td>
+                    <td>" . htmlspecialchars($arrMsj['mensaje']) . "</td>
+                    <td>" . htmlspecialchars($arrMsj['timeStamps']) . "</td>
+
+                    <td>
+                        <a href='editar.php?id=" . $arrMsj['id'] . "'>
+                            <img src='Imagenes/editar.png'
+                                 alt='Editar' width='25'>
+                        </a>
+
+                       <a href="borrar.php?id=<?php echo $fila['id']; ?>"
+   onclick="return confirm('¿Estás seguro de borrar este mensaje?');">
+    <img src="Imagenes/boteBasura.png" alt="Borrar" width="25">
 </a>
-                      </td>".
-                 "</tr>";
+                    </td>
+                </tr>";
             }
             ?>
-            
-
         </tbody>
     </table>
 </section>
@@ -66,6 +70,22 @@
     <p>2026 Mi portafolio web</p>
     <p>Practica de Programación Web todos los derechos reservados</p>
 </footer>
+
+<script>
+    const parametros = new URLSearchParams(window.location.search);
+
+    if (parametros.get("actualizado") === "1") {
+        alert("El mensaje se actualizó correctamente.");
+    }
+
+    if (parametros.get("borrado") === "1") {
+        alert("El mensaje se eliminó correctamente.");
+    }
+
+    if (parametros.get("borrado") === "0") {
+        alert("No se pudo eliminar el mensaje.");
+    }
+</script>
 
 </body>
 </html>

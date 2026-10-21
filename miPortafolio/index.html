@@ -118,5 +118,21 @@
     </p>
 </footer>
 <script src="./JS/Alertinsert.js"></script>
+
+<script>
+    const parametros = new URLSearchParams(window.location.search);
+
+    if (parametros.get('actualizado') === '1') {
+        alert('¡Registro actualizado correctamente!');
+        window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname
+        );
+    }
+</script>
+
+</body>
+</html>
 </body>
 </html>

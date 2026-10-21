@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,55 +16,56 @@
 </header>
 
 <nav>
-    <a href="index.html"><i class="bi bi-house"></i></a>
+    <a href="index.html">
+        <img src="Imagenes/casa.png"  width="30">
+    </a>
 </nav>
 
 <main>
-<section>
-    <h2>Mensajes Recibidos</h2>
+    <section>
+        <h2>Mensajes Recibidos</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Correo</th>
-                <th>Mensaje</th>
-                <th>Fecha</th>
-                <th>Opciones</th>
-            </tr>
-        </thead>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Mensaje</th>
+                    <th>Fecha</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
 
-        <tbody>
-            <?php
-            require_once 'consulta_mensaje.php';
+            <tbody>
+                <?php
+                require_once 'consulta_mensaje.php';
 
-            $rsMsj = consultaMensajes();
+                $rsMsj = consultaMensajes();
 
-            while ($arrMsj = mysqli_fetch_array($rsMsj)) {
+                while ($arrMsj = mysqli_fetch_array($rsMsj)) {
 
-                echo "<tr>
-                    <td>" . htmlspecialchars($arrMsj['nombre']) . "</td>
-                    <td>" . htmlspecialchars($arrMsj['correo']) . "</td>
-                    <td>" . htmlspecialchars($arrMsj['mensaje']) . "</td>
-                    <td>" . htmlspecialchars($arrMsj['timeStamps']) . "</td>
+                    echo "<tr>
+                        <td>" . htmlspecialchars($arrMsj['nombre']) . "</td>
+                        <td>" . htmlspecialchars($arrMsj['correo']) . "</td>
+                        <td>" . htmlspecialchars($arrMsj['mensaje']) . "</td>
+                        <td>" . htmlspecialchars($arrMsj['timeStamps']) . "</td>
 
-                    <td>
-                        <a href='editar.php?id=" . $arrMsj['id'] . "'>
-                            <img src='Imagenes/editar.png'
-                                 alt='Editar' width='25'>
-                        </a>
+                        <td>
+                            <a href='editar.php?id=" . $arrMsj['id'] . "'>
+                                <img src='Imagenes/editar.png' alt='Editar' width='25'>
+                            </a>
 
-                       <a href="borrar.php?id=<?php echo $fila['id']; ?>"
-   onclick="return confirm('¿Estás seguro de borrar este mensaje?');">
-    <img src="Imagenes/boteBasura.png" alt="Borrar" width="25">
-</a>
-                    </td>
-                </tr>";
-            }
-            ?>
-        </tbody>
-    </table>
-</section>
+                            <a href='borrar.php?id=" . $arrMsj['id'] . "'
+                               onclick=\"return confirm('¿Estás seguro de borrar este mensaje?');\">
+                                <img src='Imagenes/boteBasura.png' alt='Borrar' width='25'>
+                            </a>
+                        </td>
+                    </tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </section>
 </main>
 
 <footer>

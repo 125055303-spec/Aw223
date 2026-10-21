@@ -7,132 +7,132 @@
     <link rel="stylesheet" href="./CSS/estilos.css">
 </head>
 <body>
-    <!-- encabezado -->
-   <header> 
-    <h1>Mi portafolio</h1> 
-    <p id="bienvenida">Bienvenido a mi Sitio Web personal</p>
-    <button id="botonBienvenida">Cambiar bienvenida</button>
-</header>
-<!-- Navegación-->
 
-<nav>
-<a href="">INICIO</a>
-<a href="">SOBRE MÍ</a>
-<a href="">HABILIDADES</a>
-<a href="">PROYECTOS</a>
-<a href="">CONTACTO</a>
-<a href="admin.php">ADMIN</a>
-</nav>
-<!-- Contenido principal -->
-<main>
-<section class="seccion-inicio">
-<div class="seccion-contenido">
-<h2>Hola :D, Soy Ashley Michelle</h2>
-<p>Soy Estudiante de TIID y aprendo a programar </p>
-<a href="" class="boton">Ver mis proyectos</a>
-</div>
-</section>
+    <!-- Encabezado -->
+    <header>
+        <h1>Mi portafolio</h1>
+        <p id="bienvenida">Bienvenido a mi Sitio Web personal</p>
+        <button id="botonBienvenida">Cambiar bienvenida</button>
+    </header>
 
-<!-- Sección sobre mí -->
-<section>
-    <h2>SOBRE MÍ</h2>
-    <div class="sobre-mi-contenido"> 
-        <img src="ash.jpeg" alt="Foto de Ashley Michelle">
-        <div>
-            <p>Yo en una salida familiar</p>
-            <p>En esta practica estoy aprendiendo HTML & CSS</p>
-        </div>
-    </div>
-</section>
-<!-- Sección habilidades -->
-<section> 
-    <h2>MIS HABILIDADES</h2>
+    <!-- Navegación -->
+    <nav>
+        <a href="">INICIO</a>
+        <a href="">SOBRE MÍ</a>
+        <a href="">HABILIDADES</a>
+        <a href="">PROYECTOS</a>
+        <a href="">CONTACTO</a>
+        <a href="admin.php">ADMIN</a>
+    </nav>
 
-    <button id="botonColor">Cambiar color</button>
-    <button id="botonFuente">Cambiar tipografía</button>
+    <!-- Contenido principal -->
+    <main>
 
-    <ul class="lista-habilidades"> 
-        <li>JAVA</li> 
-        <li>SCRATCH</li> 
-        <li>PSEINT</li> 
-        <li>CISCO PACKET TRACER</li> 
-        <li>MySQL</li> 
-    </ul> 
-</section>
+        <!-- Sección inicio -->
+        <section class="seccion-inicio">
+            <div class="seccion-contenido">
+                <h2>Hola :D, Soy Ashley Michelle</h2>
+                <p>Soy Estudiante de TIID y aprendo a programar</p>
+                <a href="" class="boton">Ver mis proyectos</a>
+            </div>
+        </section>
 
-<!-- Sección proyectos -->
-<section>
-    <h2>MIS PROYECTOS </h2>
-    <div class="contenedor-proyectos">
-        <article class="proyecto">
-            <h3>Sistema inteligente de ahorro energético</h3>
-            <p>Sistema encargado de monitorear y alertar según el consumo energético registrado</p>
-        <a href="">Ver mis proyectos</a>
-    </article>
-     <article class="proyecto">
-            <h3>Sistema de gestión de inventario</h3>
-            <p>Sistema encargado de monitorear y gestionar el inventario de productos</p>
-        <a href="">Ver mis proyectos</a>
-    </article>
-</div>
-</section>
+        <!-- Sección sobre mí -->
+        <section>
+            <h2>SOBRE MÍ</h2>
+            <div class="sobre-mi-contenido">
+                <img src="ash.jpeg" alt="Foto de Ashley Michelle">
+                <div>
+                    <p>Yo en una salida familiar</p>
+                    <p>En esta práctica estoy aprendiendo HTML y CSS</p>
+                </div>
+            </div>
+        </section>
 
-<!-- Sección contacto -->
- <section id ="contacto">
-    <h2>CONTACTAME</h2>
-    <form id="formulario" action="guardar_mensaje.php" method="post">
-        <div class="campo">
-            <label for="nombre">Nombre</label>
-            <input
-             type="text"
-             id="nombre"
-             name="txtnombre"
-             placeholder="Ingresa tu nombre"
-             >
-        </div>
-        <div class="campo">
-           <label for="email">Correo</label>
-            <input type="email"
-            id="email"
-             name="txtemail"
-             placeholder="ashley@gmail.com"
-             > 
-        </div>
-     <div class="campo">
+        <!-- Sección habilidades -->
+        <section>
+            <h2>MIS HABILIDADES</h2>
 
-           <label for="mensaje">Mensaje</label>
-           <textarea
-           id="mensaje"
-            name="txtmensaje"
-            placeholder="Escribe tu mensaje"
-           rows="5">
-            </textarea>
-     </div>
-     <button type="submit">Enviar</button>
-    </form>
- </section>
-</main>
-<footer>
-    <p>2026 Mi portafolio web</p>
-    <p>Practica de Programación Web todos los derechos reservados
-    </p>
-</footer>
-<script src="./JS/Alertinsert.js"></script>
+            <button id="botonColor">Cambiar color</button>
+            <button id="botonFuente">Cambiar tipografía</button>
 
-<script>
-    const parametros = new URLSearchParams(window.location.search);
+            <ul class="lista-habilidades">
+                <li>JAVA</li>
+                <li>SCRATCH</li>
+                <li>PSEINT</li>
+                <li>CISCO PACKET TRACER</li>
+                <li>MySQL</li>
+            </ul>
+        </section>
 
-    if (parametros.get('actualizado') === '1') {
-        alert('¡Registro actualizado correctamente!');
-        window.history.replaceState(
-            {},
-            document.title,
-            window.location.pathname
-        );
-    }
-</script>
+        <!-- Sección proyectos -->
+        <section>
+            <h2>MIS PROYECTOS</h2>
 
-</body>
-</html>
+            <div class="contenedor-proyectos">
+                <article class="proyecto">
+                    <h3>Sistema inteligente de ahorro energético</h3>
+                    <p>Sistema encargado de monitorear y alertar según el consumo energético registrado</p>
+                    <a href="">Ver mis proyectos</a>
+                </article>
+
+                <article class="proyecto">
+                    <h3>Sistema de gestión de inventario</h3>
+                    <p>Sistema encargado de monitorear y gestionar el inventario de productos</p>
+                    <a href="">Ver mis proyectos</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección contacto -->
+        <section id="contacto">
+            <h2>CONTÁCTAME</h2>
+
+            <form id="formulario" action="guardar_mensaje.php" method="post">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="txtnombre"
+                        placeholder="Ingresa tu nombre"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="email">Correo</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="txtemail"
+                        placeholder="ashley@gmail.com"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea
+                        id="mensaje"
+                        name="txtmensaje"
+                        placeholder="Escribe tu mensaje"
+                        rows="5"
+                    ></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>2026 Mi portafolio web</p>
+        <p>Práctica de Programación Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Archivo JavaScript -->
+    <script src="./JS/Alertinsert.js"></script>
+
 </body>
 </html>

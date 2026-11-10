@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor-app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="menu-lateral">
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="activo">
+                <img src="imagenes/home.png" alt=""> <span>Inicio</span>
+            </a>
+            <a href="usuarios.html">
+                <img src="imagenes/usuarioa.png" alt=""> <span>Usuarios</span>
+            </a>
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt=""> <span>Roles y permisos</span>
+            </a>
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt=""> <span>Productos</span>
+            </a>
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt=""> <span>Ventas</span>
+            </a>
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt=""> <span>Inventario</span>
+            </a>
+            <a href="proveedores.html">
+                <img src="imagenes/proveedores.png" alt=""> <span>Proveedores</span>
+            </a>
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt=""> <span>Reportes</span>
+            </a>
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt=""> <span>Configuración</span>
+            </a>
+        </nav>
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+            <i class="perfil-icono"></i>
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+        <header class="encabezado-superior">
+            <div><h1 class="titulo">Inicio</h1><p class="inventario-descripcion">Resumen general del sistema</p></div>
+            <a href="perfil.html" class="avatar">L</a>
+        </header>
+        <input class="buscador" type="text" placeholder="Buscar en el sistema..." style="margin-bottom:20px">
+        <div class="tarjeta celeste banner cuadricula" style="grid-template-columns:1fr auto;margin-bottom:22px">
+            <div><h2>¡Hola Administrador!</h2><p>Aquí tienes un resumen general del sistema.</p></div>
+            <img src="imagenes/banner.png" alt="">
+        </div>
+        <section class="cuadricula cuatro-columnas">
+            <div class="tarjeta celeste"><h3>Total de productos</h3><b>482</b></div>
+            <div class="tarjeta rosa"><h3>Ventas del mes</h3><b>$24,800</b></div>
+            <div class="tarjeta rosa"><h3>Usuarios registrados</h3><b>156</b></div>
+            <div class="tarjeta naranja"><h3>Stock bajo</h3><b>23</b></div>
+        </section>
+        <div class="cuadricula dos-columnas">
+            <div class="caja"><h3>Ventas de los últimos 7 días</h3><div class="barras"><div style="height: 45%;"></div><div style="height: 55%;"></div><div style="height: 50%;"></div><div style="height: 65%;"></div><div style="height: 85%;"></div><div style="height: 100%;"></div><div style="height: 75%;"></div></div></div>
+            <div class="caja"><h3>Productos más vendidos</h3>
+                <div class="clasificacion"><span>1</span><img src="imagenes/comic.jpeg" alt="One Piece"><div>One Piece Vol. 1<small>$250 - 120 vendidos</small></div></div>
+                <div class="clasificacion"><span>2</span><img src="imagenes/comic2.jpeg" alt="Attack on Titan"><div>Attack on Titan Vol. 1<small>$280 - 95 vendidos</small></div></div>
+                <div class="clasificacion"><span>3</span><img src="imagenes/comic3.jpeg" alt="Spider-Man"><div>Spider-Man Vol. 1<small>$220 - 80 vendidos</small></div></div>
+                <div class="clasificacion"><span>4</span><img src="imagenes/comic4.jpeg" alt="Demon Slayer"><div>Demon Slayer Vol. 1<small>$240 - 76 vendidos</small></div></div>
+            </div>
+        </div>
+
+    </main>
+    <aside class="panel-lateral">
+        <h2>Últimas actividades</h2>
+        <div class="actividad"><img src="imagenes/users.png" alt=""><div>Usuario nuevo registrado<small>Hace 2 min - Ana Torres</small></div></div>
+        <div class="actividad"><img src="imagenes/ventas.png" alt=""><div>Venta realizada<small>Hace 12 min - $450</small></div></div>
+        <div class="actividad"><img src="imagenes/alert.png" alt=""><div>Producto con stock bajo<small>Hace 25 min - One Piece Vol. 1</small></div></div>
+        <div class="actividad"><img src="imagenes/proveedores.png" alt=""><div>Nuevo proveedor agregado<small>Hace 1 h - Editorial Panini</small></div></div>
+        <div class="tarjeta celeste tarjeta-nuevos"><h2>¡Nuevos cómics en stock!</h2><img src="imagenes/libro.png" alt="Nuevos cómics"></div>
+    </aside>
+</div>
+</body>
+</html>

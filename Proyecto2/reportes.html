@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Reportes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor-app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="menu-lateral">
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">
+                <img src="imagenes/home.png" alt=""> <span>Inicio</span>
+            </a>
+            <a href="usuarios.html">
+                <img src="imagenes/usuarioa.png" alt=""> <span>Usuarios</span>
+            </a>
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt=""> <span>Roles y permisos</span>
+            </a>
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt=""> <span>Productos</span>
+            </a>
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt=""> <span>Ventas</span>
+            </a>
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt=""> <span>Inventario</span>
+            </a>
+            <a href="proveedores.html">
+                <img src="imagenes/proveedores.png" alt=""> <span>Proveedores</span>
+            </a>
+            <a href="reportes.html" class="activo">
+                <img src="imagenes/reportes.png" alt=""> <span>Reportes</span>
+            </a>
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt=""> <span>Configuración</span>
+            </a>
+        </nav>
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+            <i class="perfil-icono"></i>
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+        <header class="encabezado-superior">
+            <div><h1 class="titulo">Reportes y Estadísticas</h1><p class="inventario-descripcion">Analítica general de ventas, inventario e ingresos</p></div>
+            <a href="perfil.html" class="avatar">L</a>
+        </header>
+        <div class="cuadricula dos-columnas">
+            <div class="tarjeta-modulo bloque-naranja reporte-card">
+                <h2 class="titulo-seccion-card">Ventas por día</h2>
+                <div class="caja-blanca reporte-box"><div class="grafica-barras-contenedor"><div class="barra-item"><span class="barra-valor">$1.2k</span><div class="barra-fill" style="height: 40%;"></div><span class="barra-dia">Lun</span></div><div class="barra-item"><span class="barra-valor">$1.5k</span><div class="barra-fill" style="height: 50%;"></div><span class="barra-dia">Mar</span></div><div class="barra-item"><span class="barra-valor">$1.4k</span><div class="barra-fill" style="height: 48%;"></div><span class="barra-dia">Mié</span></div><div class="barra-item"><span class="barra-valor">$1.9k</span><div class="barra-fill" style="height: 63%;"></div><span class="barra-dia">Jue</span></div><div class="barra-item"><span class="barra-valor">$2.4k</span><div class="barra-fill" style="height: 80%;"></div><span class="barra-dia">Vie</span></div><div class="barra-item destacado"><span class="barra-valor">$3.0k</span><div class="barra-fill" style="height: 100%;"></div><span class="barra-dia">Sáb</span></div><div class="barra-item"><span class="barra-valor">$2.1k</span><div class="barra-fill" style="height: 72%;"></div><span class="barra-dia">Dom</span></div></div></div>
+            </div>
+            <div class="tarjeta-modulo bloque-celeste reporte-card">
+                <h2 class="titulo-seccion-card">Ventas por categoría</h2>
+                <div class="caja-blanca reporte-box flex-center"><div class="donut-chart"><div class="donut-centro"><strong>100%</strong><small>Total</small></div></div><div class="categorias-leyenda"><div class="item-leyenda"><span class="dot dc"></span> DC Comics <strong>35%</strong></div><div class="item-leyenda"><span class="dot manga"></span> Manga <strong>30%</strong></div><div class="item-leyenda"><span class="dot marvel"></span> Marvel <strong>25%</strong></div><div class="item-leyenda"><span class="dot otros"></span> Otros <strong>10%</strong></div></div></div>
+            </div>
+        </div>
+        <div class="cuadricula tres-columnas reportes-inferiores">
+            <div class="tarjeta-modulo bloque-celeste reporte-card">
+                <h2 class="titulo-seccion-card">Estado del inventario</h2>
+                <div class="caja-blanca reporte-mini-box"><div class="item-barra-inventario"><div class="label-inv"><span>Disponible</span> <strong>1,426 (85%)</strong></div><div class="track"><div class="fill verde" style="width: 85%;"></div></div></div><div class="item-barra-inventario"><div class="label-inv"><span>Poco stock</span> <strong>21 (10%)</strong></div><div class="track"><div class="fill naranja" style="width: 10%;"></div></div></div><div class="item-barra-inventario"><div class="label-inv"><span>Agotado</span> <strong>12 (5%)</strong></div><div class="track"><div class="fill rojo" style="width: 5%;"></div></div></div></div>
+            </div>
+            <div class="tarjeta-modulo bloque-naranja reporte-card">
+                <h2 class="titulo-seccion-card">Pedidos por proveedor</h2>
+                <div class="caja-blanca reporte-mini-box"><div class="item-horizontal"><span>Panini</span><div class="track-h"><div class="fill-h" style="width: 100%;"></div></div><strong>45</strong></div><div class="item-horizontal"><span>ECC</span><div class="track-h"><div class="fill-h" style="width: 65%;"></div></div><strong>30</strong></div><div class="item-horizontal"><span>Ivrea</span><div class="track-h"><div class="fill-h" style="width: 50%;"></div></div><strong>22</strong></div><div class="item-horizontal"><span>Kamite</span><div class="track-h"><div class="fill-h" style="width: 35%;"></div></div><strong>15</strong></div></div>
+            </div>
+            <div class="tarjeta-modulo bloque-rosa reporte-card">
+                <h2 class="titulo-seccion-card">Ingresos por mes</h2>
+                <div class="caja-blanca reporte-mini-box"><div class="grafica-ingresos-svg"><svg viewBox="0 0 300 120" class="svg-curva"><defs><linearGradient id="gradIngresos" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4DD0E1" stop-opacity="0.6"/><stop offset="100%" stop-color="#4DD0E1" stop-opacity="0"/></linearGradient></defs><path d="M 0,100 Q 50,20 100,70 T 200,30 T 300,10 L 300,120 L 0,120 Z" fill="url(#gradIngresos)"/><path d="M 0,100 Q 50,20 100,70 T 200,30 T 300,10" fill="none" stroke="#C43D32" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="70" r="4" fill="#C43D32"/><circle cx="200" cy="30" r="4" fill="#C43D32"/><circle cx="296" cy="11" r="5" fill="#C43D32"/></svg><div class="meses-labels"><span>Ago</span><span>Sep</span><span>Oct</span><span>Nov</span></div></div></div>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Usuarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor-app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="menu-lateral">
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">
+                <img src="imagenes/home.png" alt=""> <span>Inicio</span>
+            </a>
+            <a href="usuarios.html" class="activo">
+                <img src="imagenes/usuarioa.png" alt=""> <span>Usuarios</span>
+            </a>
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt=""> <span>Roles y permisos</span>
+            </a>
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt=""> <span>Productos</span>
+            </a>
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt=""> <span>Ventas</span>
+            </a>
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt=""> <span>Inventario</span>
+            </a>
+            <a href="proveedores.html">
+                <img src="imagenes/proveedores.png" alt=""> <span>Proveedores</span>
+            </a>
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt=""> <span>Reportes</span>
+            </a>
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt=""> <span>Configuración</span>
+            </a>
+        </nav>
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+            <i class="perfil-icono"></i>
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+        <header class="encabezado-superior">
+            <div><h1 class="titulo">Usuarios</h1><p class="inventario-descripcion">Administración de usuarios del sistema</p></div>
+            <a href="perfil.html" class="avatar">L</a>
+        </header>
+        <section class="cuadricula tres-columnas">
+            <div class="tarjeta-stat bloque-celeste"><h3>Total de usuarios</h3><b class="stat-numero">12</b></div>
+            <div class="tarjeta-stat bloque-rosa"><h3>Usuarios activos</h3><b class="stat-numero">10</b></div>
+            <div class="tarjeta-stat bloque-naranja"><h3>Usuarios inactivos</h3><b class="stat-numero">2</b></div>
+        </section>
+        <section class="tarjeta-modulo bloque-cian">
+            <h2 class="titulo-seccion">Lista de usuarios</h2>
+            <div class="contenedor-tabla">
+<table class="tabla-gestion tabla-usuarios">
+<thead><tr><th class="text-center">ID</th><th>Nombre</th><th>Correo electrónico</th><th>Rol</th><th class="text-center">Estado</th></tr></thead>
+<tbody>
+<tr><td class="text-center"><span class="mov-id">001</span></td><td><strong>Administrador</strong></td><td>admin@weirdocomics.com</td><td><span class="badge-rol">Administrador</span></td><td class="text-center"><span class="badge-estado activo-usuario">Activo</span></td></tr>
+<tr><td class="text-center"><span class="mov-id">002</span></td><td><strong>Carlos Mendoza</strong></td><td>carlos@weirdocomics.com</td><td><span class="badge-rol">Vendedor</span></td><td class="text-center"><span class="badge-estado activo-usuario">Activo</span></td></tr>
+<tr><td class="text-center"><span class="mov-id">003</span></td><td><strong>Mariana López</strong></td><td>mariana@weirdocomics.com</td><td><span class="badge-rol">Inventario</span></td><td class="text-center"><span class="badge-estado activo-usuario">Activo</span></td></tr>
+<tr><td class="text-center"><span class="mov-id">004</span></td><td><strong>Daniel Torres</strong></td><td>daniel@weirdocomics.com</td><td><span class="badge-rol">Vendedor</span></td><td class="text-center"><span class="badge-estado inactivo-usuario">Inactivo</span></td></tr>
+</tbody>
+</table>
+</div>
+        </section>
+
+    </main>
+
+</div>
+</body>
+</html>

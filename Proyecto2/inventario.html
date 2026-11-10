@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Inventario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor-app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="menu-lateral">
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">
+                <img src="imagenes/home.png" alt=""> <span>Inicio</span>
+            </a>
+            <a href="usuarios.html">
+                <img src="imagenes/usuarioa.png" alt=""> <span>Usuarios</span>
+            </a>
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt=""> <span>Roles y permisos</span>
+            </a>
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt=""> <span>Productos</span>
+            </a>
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt=""> <span>Ventas</span>
+            </a>
+            <a href="inventario.html" class="activo">
+                <img src="imagenes/inventario.png" alt=""> <span>Inventario</span>
+            </a>
+            <a href="proveedores.html">
+                <img src="imagenes/proveedores.png" alt=""> <span>Proveedores</span>
+            </a>
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt=""> <span>Reportes</span>
+            </a>
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt=""> <span>Configuración</span>
+            </a>
+        </nav>
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+            <i class="perfil-icono"></i>
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+        <header class="encabezado-superior">
+            <div><h1 class="titulo">Gestión de inventario</h1><p class="inventario-descripcion">Consulta las existencias y movimientos de tus productos.</p></div>
+            <a href="perfil.html" class="avatar">L</a>
+        </header>
+        <div class="inventario-superior">
+        <section class="tarjeta-modulo bloque-cian">
+            <h2 class="titulo-seccion">Resumen de inventario</h2>
+            <div class="contenedor-tabla">
+<table class="tabla-gestion tabla-resumen">
+<thead><tr><th>Indicador</th><th class="text-center">Cantidad</th></tr></thead>
+<tbody>
+<tr><td>Productos registrados</td><td class="text-center"><strong>248</strong></td></tr>
+<tr><td>Stock disponible</td><td class="text-center"><strong>1,426</strong></td></tr>
+<tr><td>Poco stock</td><td class="text-center"><span class="badge-alerta">21</span></td></tr>
+<tr><td>Productos agotados</td><td class="text-center"><span class="badge-peligro">12</span></td></tr>
+</tbody>
+</table>
+</div>
+        </section>
+        <section class="tarjeta-modulo bloque-naranja">
+            <h2 class="titulo-tarjeta">Productos con poco stock</h2>
+            <div class="contenedor-tabla">
+<table class="tabla-gestion tabla-poco-stock">
+<thead><tr><th>Producto</th><th class="text-center">Stock</th><th class="text-center">Estado</th></tr></thead>
+<tbody>
+<tr><td>Batman: Año Uno</td><td class="text-center"><strong>5</strong></td><td class="text-center"><span class="stock-bajo">Bajo</span></td></tr>
+<tr><td>Avengers #12</td><td class="text-center"><strong>3</strong></td><td class="text-center"><span class="stock-bajo">Bajo</span></td></tr>
+<tr><td>Naruto Vol. 4</td><td class="text-center"><strong>2</strong></td><td class="text-center"><span class="stock-bajo">Bajo</span></td></tr>
+</tbody>
+</table>
+</div>
+        </section>
+        </div>
+        <section class="tarjeta-modulo bloque-cian inventario-movimientos">
+            <div class="inventario-titulo">
+                <h2 class="titulo-seccion">Movimientos de inventario</h2>
+                <p class="subtitulo-seccion">Historial de entradas y salidas de productos.</p>
+            </div>
+            <div class="contenedor-tabla">
+<table class="tabla-gestion tabla-movimientos">
+<thead><tr><th>ID</th><th>Producto</th><th class="text-center">Tipo</th><th class="text-center">Cantidad</th><th>Motivo</th><th>Fecha</th><th>Responsable</th></tr></thead>
+<tbody>
+<tr><td><span class="mov-id">MOV-001</span></td><td><strong>Spider-Man #01</strong></td><td class="text-center"><span class="mov-entrada">Entrada</span></td><td class="text-center"><span class="cantidad-mas">+10</span></td><td>Compra a proveedor</td><td>03/10/2026</td><td>Sofía R.</td></tr>
+<tr><td><span class="mov-id">MOV-002</span></td><td><strong>Batman: Año Uno</strong></td><td class="text-center"><span class="mov-salida">Salida</span></td><td class="text-center"><span class="cantidad-menos">-2</span></td><td>Venta</td><td>03/10/2026</td><td>Carlos H.</td></tr>
+<tr><td><span class="mov-id">MOV-003</span></td><td><strong>One Piece Vol. 1</strong></td><td class="text-center"><span class="mov-entrada">Entrada</span></td><td class="text-center"><span class="cantidad-mas">+5</span></td><td>Compra a proveedor</td><td>02/10/2026</td><td>Sofía R.</td></tr>
+<tr><td><span class="mov-id">MOV-004</span></td><td><strong>Avengers #12</strong></td><td class="text-center"><span class="mov-salida">Salida</span></td><td class="text-center"><span class="cantidad-menos">-3</span></td><td>Venta</td><td>02/10/2026</td><td>Andrea M.</td></tr>
+</tbody>
+</table>
+</div>
+        </section>
+
+    </main>
+
+</div>
+</body>
+</html>

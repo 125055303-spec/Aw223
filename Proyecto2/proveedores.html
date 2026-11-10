@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Proveedores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor-app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="menu-lateral">
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">
+                <img src="imagenes/home.png" alt=""> <span>Inicio</span>
+            </a>
+            <a href="usuarios.html">
+                <img src="imagenes/usuarioa.png" alt=""> <span>Usuarios</span>
+            </a>
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt=""> <span>Roles y permisos</span>
+            </a>
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt=""> <span>Productos</span>
+            </a>
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt=""> <span>Ventas</span>
+            </a>
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt=""> <span>Inventario</span>
+            </a>
+            <a href="proveedores.html" class="activo">
+                <img src="imagenes/proveedores.png" alt=""> <span>Proveedores</span>
+            </a>
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt=""> <span>Reportes</span>
+            </a>
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt=""> <span>Configuración</span>
+            </a>
+        </nav>
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+            <i class="perfil-icono"></i>
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+        <header class="encabezado-superior">
+            <div><div class="proveedor-encabezado"><h1 class="titulo">Proveedores</h1><p class="inventario-descripcion">Administra y consulta los proveedores de tu tienda.</p></div></div>
+            <a href="perfil.html" class="avatar">L</a>
+        </header>
+        <div class="proveedor-buscador"><input class="search" type="search" placeholder="Buscar proveedor..." aria-label="Buscar proveedor"></div>
+        <section class="tarjeta-modulo bloque-cian tabla-contenedor">
+            <div class="contenedor-tabla">
+<table class="tabla-gestion tabla-proveedores">
+<thead><tr><th class="text-center">ID</th><th>Proveedor</th><th>Contacto</th><th>Teléfono</th><th class="text-center">Productos</th><th class="text-center">Estado</th></tr></thead>
+<tbody>
+<tr><td class="text-center"><span class="proveedor-id">PRO-001</span></td><td>Editorial Panini</td><td>contacto@panini.com</td><td>442 123 4567</td><td class="text-center">19</td><td class="text-center"><span class="proveedor-activo">ACTIVO</span></td></tr>
+<tr><td class="text-center"><span class="proveedor-id">PRO-002</span></td><td>Marvel Distribución</td><td>ventas@marvel.com</td><td>442 234 5678</td><td class="text-center">35</td><td class="text-center"><span class="proveedor-activo">ACTIVO</span></td></tr>
+<tr><td class="text-center"><span class="proveedor-id">PRO-003</span></td><td>DC Comics MX</td><td>pedidos@dccomics.com</td><td>442 345 6789</td><td class="text-center">40</td><td class="text-center"><span class="proveedor-activo">ACTIVO</span></td></tr>
+<tr><td class="text-center"><span class="proveedor-id">PRO-004</span></td><td>Manga House</td><td>ventas@mangahouse.com</td><td>442 456 7890</td><td class="text-center">10</td><td class="text-center"><span class="proveedor-inactivo">INACTIVO</span></td></tr>
+</tbody>
+</table>
+</div>
+        </section>
+        <div class="proveedor-acciones">
+            <a href="agregar-proveedor.html" class="btn-agregar-proveedor">Agregar proveedor</a>
+        </div>
+
+    </main>
+
+</div>
+</body>
+</html>

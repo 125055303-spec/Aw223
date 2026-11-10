@@ -1,0 +1,221 @@
+/* ===== WEIRDO COMICS · SISTEMA DE ESTILOS UNIFICADO ===== */
+:root{
+  --crema:#FDDFAA; --crema-claro:#FFF7E8; --crema-osc:#EEC78D;
+  --cian:#4DD0E1; --celeste:#7FE5E8; --cian-osc:#00838F;
+  --rojo:#FF9AA2; --rojo-osc:#C43D32;
+  --amarillo:#FFCB73; --naranja:#FFB347;
+  --texto:#2D3748; --verde:#267344;
+  --radio:18px; --sombra:0 4px 10px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Arial,sans-serif;font-size:14px;color:var(--texto);background:var(--crema-claro)}
+a{color:inherit}
+h1{font-size:30px;font-weight:700;letter-spacing:.3px}
+h2{font-size:18px;font-weight:700;letter-spacing:.3px}
+h3{font-size:15px;font-weight:700}
+::placeholder{color:#5a4a2a;opacity:.8}
+
+/* ESTRUCTURA */
+.contenedor-app{display:flex;min-height:100vh}
+.contenido-principal{flex:1;min-width:0;padding:28px 32px}
+.panel-lateral{flex:0 0 290px;padding:28px 24px 28px 0}
+.panel-lateral h2{margin-bottom:14px}
+
+/* MENÚ LATERAL */
+.menu-lateral{flex:0 0 240px;position:sticky;top:0;height:100vh;background:var(--crema);display:flex;flex-direction:column;padding:1.4rem 1rem}
+.logo-contenedor{display:flex;justify-content:center;margin-bottom:1rem}
+.logo{width:150px;height:90px;object-fit:contain}
+.nav-menu{flex:1;display:flex;flex-direction:column;gap:4px;overflow-y:auto}
+.nav-menu a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;color:var(--texto);text-decoration:none;font-weight:500;transition:background .2s}
+.nav-menu a img{width:22px;height:22px;object-fit:contain}
+.nav-menu a:hover{background:rgba(238,199,141,.6)}
+.nav-menu a.activo{background:var(--crema-osc);font-weight:700}
+.perfil-sidebar{display:flex;align-items:center;gap:10px;background:var(--crema-osc);border-radius:14px;padding:10px 12px;margin-top:1rem}
+.perfil-icono{width:30px;height:30px;border-radius:50%;background:var(--rojo);flex-shrink:0}
+.perfil-texto strong{display:block;font-size:14px}
+.perfil-texto small{font-size:11px}
+
+/* ENCABEZADO */
+.encabezado-superior{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:22px}
+.subtitulo{margin-top:4px;color:#6b5a38;font-size:14px}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--rojo);color:#7A1F2B;display:grid;place-items:center;font-weight:700;font-size:20px;text-decoration:none;flex-shrink:0}
+
+/* CUADRÍCULAS */
+.cuadricula{display:grid;gap:16px;margin-bottom:22px}
+.cuatro-columnas{grid-template-columns:repeat(4,1fr)}
+.tres-columnas{grid-template-columns:repeat(3,1fr)}
+.dos-columnas{grid-template-columns:1fr 1fr}
+
+/* TARJETAS Y BLOQUES DE COLOR */
+.tarjeta-modulo{border-radius:var(--radio);padding:1.4rem;margin-bottom:22px;box-shadow:var(--sombra)}
+.cuadricula .tarjeta-modulo{margin-bottom:0}
+.tarjeta-stat{border-radius:var(--radio);padding:1.1rem 1.2rem;text-align:center;box-shadow:var(--sombra)}
+.tarjeta-stat h3{font-size:14px;font-weight:600}
+.stat-numero{display:block;font-size:32px;margin-top:6px}
+.bloque-cian{background:var(--cian)}
+.bloque-celeste{background:var(--celeste)}
+.bloque-rosa{background:var(--rojo)}
+.bloque-naranja{background:var(--amarillo)}
+.titulo-seccion{margin-bottom:14px}
+.titulo-seccion+.subtitulo{margin:-10px 0 14px}
+.caja-blanca{background:#fff;border-radius:14px;padding:16px}
+.encabezado-bloque{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.encabezado-bloque .titulo-seccion{margin:0}
+.banner{display:flex;justify-content:space-between;align-items:center;overflow:hidden}
+.banner h2{font-size:24px}
+.banner img{height:90px}
+
+/* BUSCADOR Y CHIPS */
+.buscador{width:100%;max-width:380px;border:0;border-radius:999px;padding:10px 18px;font:inherit;background:#fff;box-shadow:var(--sombra)}
+.buscador:focus,.formulario input:focus,.formulario select:focus{outline:2px solid var(--crema-osc)}
+.barra-superior{margin-bottom:20px}
+.barra-superior .buscador{max-width:none}
+
+/* TABLAS (una sola para todo el sistema) */
+.contenedor-tabla{overflow-x:auto}
+.tabla-gestion{width:100%;border-collapse:separate;border-spacing:0 6px}
+.tabla-gestion th{padding:6px 12px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.tabla-gestion td{background:#fff;padding:12px;font-size:13px;vertical-align:middle}
+.tabla-gestion td:first-child{border-radius:12px 0 0 12px}
+.tabla-gestion td:last-child{border-radius:0 12px 12px 0}
+.tabla-gestion tbody tr:hover td{background:#FFF3D6}
+.text-center{text-align:center!important}
+.mov-id{font-weight:700;color:var(--cian-osc);white-space:nowrap}
+.monto-total{font-weight:700}
+.cantidad-mas{color:var(--verde);font-weight:700}
+.cantidad-menos{color:var(--rojo-osc);font-weight:700}
+.tabla-matriz input{width:17px;height:17px;accent-color:var(--cian-osc)}
+
+/* ETIQUETAS DE ESTADO */
+.badge{display:inline-block;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.badge.ok{background:#E8F5E9;color:var(--verde)}
+.badge.mal{background:#FFE3E0;color:var(--rojo-osc)}
+.badge.alerta{background:#FFF1CC;color:#8A5A00}
+.badge.info{background:#E0F7FA;color:var(--cian-osc)}
+
+/* BOTONES */
+.boton{display:inline-block;border:0;border-radius:12px;padding:12px 22px;font:inherit;font-weight:600;cursor:pointer;background:var(--amarillo);color:var(--texto);text-decoration:none;text-align:center;transition:filter .2s}
+.boton:hover{filter:brightness(.95)}
+.boton.rosa{background:var(--rojo)}
+.boton.celeste{background:var(--celeste)}
+.boton.cian{background:var(--cian)}
+.btn-accion{display:inline-block;background:var(--celeste);border-radius:10px;padding:5px 14px;text-decoration:none;font-weight:600;font-size:12px}
+.btn-accion:hover{background:var(--cian)}
+.acciones{display:flex;justify-content:flex-end;gap:12px;margin-top:6px}
+
+/* FORMULARIOS */
+.distribucion{display:flex;gap:32px;align-items:flex-start;background:#fff;border-radius:var(--radio);padding:1.6rem;box-shadow:var(--sombra)}
+.columna-izquierda{width:260px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.columna-izquierda .boton{width:100%}
+.imagen-grande{width:220px;height:220px;object-fit:contain}
+.circulo{width:190px;height:190px;border-radius:50%;background:var(--rojo);color:#7A1F2B;font-size:100px;font-weight:700;display:grid;place-items:center}
+.formulario{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.campo label{display:block;margin-bottom:5px;font-size:13px;font-weight:700}
+.campo.completo,.formulario .completo{grid-column:1/-1}
+.formulario input,.formulario select{width:100%;border:0;border-radius:12px;padding:13px 14px;font:inherit;color:var(--texto);background:var(--amarillo)}
+.formulario .acciones{grid-column:1/-1}
+
+/* PANEL DERECHO / LISTAS */
+.clasificacion,.actividad{display:flex;align-items:center;gap:12px;margin:10px 0}
+.clasificacion>span{width:28px;height:28px;border-radius:50%;background:var(--rojo);display:grid;place-items:center;font-weight:700;flex-shrink:0}
+.clasificacion img{width:32px;height:44px;object-fit:cover;border-radius:4px}
+.clasificacion small,.actividad small{display:block;color:#6b5a38}
+.actividad img{width:42px;height:42px;padding:6px;border-radius:12px;background:var(--rojo);object-fit:contain}
+.tarjeta-nuevos{text-align:center}
+.tarjeta-nuevos h2{margin-bottom:10px}
+.tarjeta-nuevos img{max-width:100%;height:110px;object-fit:contain}
+
+/* INVENTARIO */
+.inventario-superior{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0}
+
+/* GRÁFICAS */
+.grafica-barras-contenedor{display:flex;gap:10px;height:210px;align-items:stretch}
+.barra-item{flex:1;position:relative;display:flex;align-items:flex-end;justify-content:center;padding:20px 0;min-width:0}
+.barra-valor,.barra-dia{position:absolute;left:0;right:0;text-align:center;font-size:11px;font-weight:600}
+.barra-valor{top:0}.barra-dia{bottom:0}
+.barra-fill{width:100%;max-width:40px;background:var(--cian);border-radius:6px 6px 0 0}
+.barra-item.destacado .barra-fill{background:var(--rojo-osc)}
+.flex-center{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;min-height:230px}
+.donut-chart{position:relative;width:160px;height:160px;border-radius:50%;background:conic-gradient(var(--cian) 0 35%,var(--rojo) 35% 65%,var(--amarillo) 65% 90%,var(--crema-osc) 90% 100%)}
+.donut-centro{position:absolute;inset:28%;background:#fff;border-radius:50%;display:grid;place-content:center;text-align:center}
+.donut-centro small{font-size:11px}
+.categorias-leyenda{display:flex;flex-direction:column;gap:10px}
+.item-leyenda{display:flex;align-items:center;gap:8px}
+.item-leyenda strong{margin-left:auto;padding-left:14px}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.dc{background:var(--cian)}.dot.manga{background:var(--rojo)}.dot.marvel{background:var(--amarillo)}.dot.otros{background:var(--crema-osc)}
+.reporte-mini-box{display:flex;flex-direction:column;justify-content:center;gap:14px;min-height:170px}
+.label-inv{display:flex;justify-content:space-between;margin-bottom:4px;font-size:13px}
+.track,.track-h{height:10px;background:#EFE6D2;border-radius:999px;overflow:hidden}
+.fill,.fill-h{height:100%;border-radius:999px}
+.fill.verde{background:#4CAF73}.fill.naranja{background:var(--naranja)}.fill.rojo{background:var(--rojo-osc)}
+.fill-h{background:var(--cian)}
+.item-horizontal{display:grid;grid-template-columns:60px 1fr 32px;gap:10px;align-items:center;font-size:13px}
+.item-horizontal strong{text-align:right}
+.svg-curva{width:100%;height:auto;display:block}
+.meses-labels{display:flex;justify-content:space-between;font-size:11px;font-weight:600;margin-top:6px}
+
+/* RESPONSIVO */
+@media(max-width:1100px){.panel-lateral{display:none}.cuatro-columnas{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  .contenedor-app{flex-direction:column}
+  .menu-lateral{position:static;height:auto;flex:none;width:100%}
+  .nav-menu{flex-direction:row;flex-wrap:wrap}
+  .contenido-principal{padding:20px 16px}
+  .tres-columnas,.dos-columnas,.inventario-superior{grid-template-columns:1fr}
+  .distribucion{flex-direction:column;align-items:center}
+  .columna-izquierda{width:100%}
+  .formulario{grid-template-columns:1fr;width:100%}
+}
+
+/* ===== ALIAS: nombres de clases originales ===== */
+.contenedor-tabla,.tabla-contenedor{overflow-x:auto}
+.titulo{font-size:30px}
+.inventario-descripcion,.subtitulo-seccion{color:#6b5a38;font-size:14px}
+.proveedor-encabezado{margin-bottom:22px}.proveedor-encabezado h1{margin-bottom:4px}
+.titulo-seccion,.titulo-tarjeta,.titulo-seccion-card,.titulo-general-naranja{font-size:18px;font-weight:700;margin-bottom:14px;letter-spacing:.3px}
+.inventario-titulo{margin-bottom:14px}.inventario-titulo .titulo-seccion{margin-bottom:2px}
+.header-tabla-acciones,.proveedor-acciones{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.proveedor-buscador{margin-bottom:14px}.search{width:100%;max-width:380px;border:0;border-radius:999px;padding:10px 18px;font:inherit;background:#fff;box-shadow:var(--sombra)}
+.seccion-permisos{margin-bottom:22px}.cuadricula-tarjetas{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cuadricula-tarjetas .tarjeta-modulo,.reportes-inferiores .tarjeta-modulo,.reporte-card{margin-bottom:0}
+.reporte-card{min-width:0}.reporte-box{min-height:230px}
+.reportes-inferiores{margin-top:0}
+.grafica-ingresos-svg{width:100%}.item-barra-inventario{width:100%}
+.inventario-movimientos{margin-bottom:22px}
+
+/* tarjetas y colores originales */
+.tarjeta{border-radius:var(--radio);padding:1.1rem 1.2rem;text-align:center;box-shadow:var(--sombra)}
+.tarjeta h3{font-weight:600}.tarjeta b{display:block;font-size:32px;margin-top:6px}
+.tarjeta.banner{text-align:left;display:flex}
+.tarjeta-nuevos{text-align:center;margin-top:16px}.tarjeta-nuevos h2{margin-bottom:10px}
+.naranja{background:var(--amarillo)}.celeste{background:var(--celeste)}.rosa{background:var(--rojo)}
+.caja{background:#fff;border-radius:var(--radio);padding:1.2rem;box-shadow:var(--sombra)}
+.caja h3{font-size:16px;margin-bottom:14px}
+.barras{display:flex;align-items:flex-end;gap:10px;height:190px;border-bottom:2px solid var(--crema-osc)}
+.barras div{flex:1;background:var(--cian);border-radius:6px 6px 0 0}
+.etiquetas{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.etiquetas span{background:var(--amarillo);border-radius:999px;padding:7px 18px}
+.filtro-titulo{margin:6px 0 8px;font-size:16px}
+.fila-boton{margin-top:6px}
+
+/* etiquetas de estado originales */
+.badge-estado,.badge-rol,.badge-alerta,.badge-peligro,.stock-bajo,.mov-entrada,.mov-salida,.proveedor-activo,.proveedor-inactivo{display:inline-block;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap;background:#E8F5E9;color:var(--verde)}
+.badge-rol{background:#E0F7FA;color:var(--cian-osc)}
+.badge-alerta,.stock-bajo{background:#FFF1CC;color:#8A5A00}
+.badge-peligro,.mov-salida,.proveedor-inactivo,.inactivo-usuario,.venta-cancelada{background:#FFE3E0;color:var(--rojo-osc)}
+.proveedor-id{font-weight:700;color:var(--cian-osc);white-space:nowrap}
+
+/* botones y formularios originales */
+.btn,.btn-agregar-proveedor{display:inline-block;border:0;border-radius:12px;padding:12px 22px;font:inherit;font-weight:600;cursor:pointer;background:var(--amarillo);color:var(--texto);text-decoration:none;text-align:center}
+.btn.full,.btn-agregar-proveedor{background:var(--rojo)}
+.campo,.config-campo,.campo-proveedor{min-width:0}
+.config-campo label,.campo-proveedor label{display:block;margin-bottom:5px;font-size:13px;font-weight:700}
+.zona-horaria{grid-column:1/-1}
+.formulario input.naranja,.formulario input.o{background:var(--amarillo)}
+.formulario input.celeste{background:var(--celeste)}
+.formulario input.rosa{background:var(--rojo)}
+.proveedor-botones,.configuracion-botones{grid-column:1/-1;display:flex;gap:12px;justify-content:flex-end}
+.proveedor-botones .btn{flex:0 1 220px}
+.texto-foto{font-size:16px}
+@media(max-width:900px){.cuadricula-tarjetas{grid-template-columns:1fr}}

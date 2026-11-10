@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Configuración</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor-app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="menu-lateral">
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">
+                <img src="imagenes/home.png" alt=""> <span>Inicio</span>
+            </a>
+            <a href="usuarios.html">
+                <img src="imagenes/usuarioa.png" alt=""> <span>Usuarios</span>
+            </a>
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt=""> <span>Roles y permisos</span>
+            </a>
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt=""> <span>Productos</span>
+            </a>
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt=""> <span>Ventas</span>
+            </a>
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt=""> <span>Inventario</span>
+            </a>
+            <a href="proveedores.html">
+                <img src="imagenes/proveedores.png" alt=""> <span>Proveedores</span>
+            </a>
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt=""> <span>Reportes</span>
+            </a>
+            <a href="configuracion.html" class="activo">
+                <img src="imagenes/configuracion.png" alt=""> <span>Configuración</span>
+            </a>
+        </nav>
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+            <i class="perfil-icono"></i>
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+        <header class="encabezado-superior">
+            <div><h1 class="titulo">Configuración</h1><p class="inventario-descripcion">Datos generales de la tienda</p></div>
+            <a href="perfil.html" class="avatar">L</a>
+        </header>
+        <div class="distribucion">
+            <div class="columna-izquierda left">
+                <img class="imagen-grande big" src="imagenes/logo.png" alt="Logo de la empresa">
+                <p>Logo de la empresa</p>
+            </div>
+            <div class="formulario form">
+                <div class="config-campo"><label>Nombre de la tienda</label><input class="naranja" type="text" placeholder="Nombre de la tienda"></div>
+                <div class="config-campo"><label>Correo de contacto</label><input class="naranja" type="email" placeholder="Correo de contacto"></div>
+                <div class="config-campo"><label>Teléfono</label><input class="naranja" type="tel" placeholder="Teléfono"></div>
+                <div class="config-campo"><label>Dirección</label><input class="naranja" type="text" placeholder="Dirección"></div>
+                <div class="config-campo"><label>Idioma</label><input class="naranja" type="text" placeholder="Idioma"></div>
+                <div class="config-campo"><label>Moneda</label><input class="naranja" type="text" placeholder="Moneda"></div>
+                <div class="config-campo zona-horaria"><label>Zona horaria</label><input class="naranja" type="text" placeholder="Zona horaria"></div>
+                <div class="configuracion-botones"><button class="boton rosa" type="button">Cancelar</button><button class="boton rosa" type="button">Guardar cambios</button></div>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+</body>
+</html>

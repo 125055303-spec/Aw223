@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Agregar proveedor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor-app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="menu-lateral">
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html">
+                <img src="imagenes/home.png" alt=""> <span>Inicio</span>
+            </a>
+            <a href="usuarios.html">
+                <img src="imagenes/usuarioa.png" alt=""> <span>Usuarios</span>
+            </a>
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt=""> <span>Roles y permisos</span>
+            </a>
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt=""> <span>Productos</span>
+            </a>
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt=""> <span>Ventas</span>
+            </a>
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt=""> <span>Inventario</span>
+            </a>
+            <a href="proveedores.html" class="activo">
+                <img src="imagenes/proveedores.png" alt=""> <span>Proveedores</span>
+            </a>
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt=""> <span>Reportes</span>
+            </a>
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt=""> <span>Configuración</span>
+            </a>
+        </nav>
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+            <i class="perfil-icono"></i>
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+        <header class="encabezado-superior">
+            <div><h1 class="titulo">Agregar proveedor</h1><p class="inventario-descripcion">Registra un nuevo proveedor de la tienda</p></div>
+            <a href="perfil.html" class="avatar">L</a>
+        </header>
+        <div class="distribucion">
+            <div class="columna-izquierda left">
+                <img class="imagen-grande big" src="imagenes/image.png" alt="Proveedor">
+                <p>Logo del proveedor</p>
+            </div>
+            <div class="formulario form">
+                <div class="campo-proveedor"><label>Empresa</label><input class="o" type="text" placeholder="Nombre de la empresa"></div>
+                <div class="campo-proveedor"><label>Ciudad</label><input class="o" type="text" placeholder="Ciudad"></div>
+                <div class="campo-proveedor"><label>Contacto</label><input class="o" type="text" placeholder="Nombre del contacto"></div>
+                <div class="campo-proveedor"><label>Categoría de productos</label><input class="o" type="text" placeholder="Categoría de productos"></div>
+                <div class="campo-proveedor"><label>Correo electrónico</label><input class="o" type="email" placeholder="Correo electrónico"></div>
+                <div class="campo-proveedor"><label>Estado</label><input class="o" type="text" placeholder="Estado"></div>
+                <div class="campo-proveedor"><label>Dirección</label><input class="o" type="text" placeholder="Dirección"></div>
+                <div class="campo-proveedor"><label>Observaciones</label><input class="o" type="text" placeholder="Observaciones"></div>
+                <div class="campo-proveedor"><label>Teléfono</label><input class="o" type="tel" placeholder="Teléfono"></div>
+                <div class="proveedor-botones"><a href="proveedores.html" class="btn p">Cancelar</a><button type="button" class="btn full">Guardar proveedor</button></div>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+</body>
+</html>

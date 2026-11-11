@@ -1,91 +1,737 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weirdo Comics - Reportes</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <div class="contenedor-app">
 
-    <!-- MENÚ LATERAL -->
+    <!-- MENU LATERAL -->
     <aside class="menu-lateral">
+
         <div class="logo-contenedor">
             <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
         </div>
+
         <nav class="nav-menu">
+
             <a href="index.html">
-                <img src="imagenes/home.png" alt=""> <span>Inicio</span>
+                <img src="imagenes/home.png" alt="">
+                <span>Inicio</span>
             </a>
+
             <a href="usuarios.html">
-                <img src="imagenes/usuarioa.png" alt=""> <span>Usuarios</span>
+                <img src="imagenes/usuarioa.png" alt="">
+                <span>Usuarios</span>
             </a>
+
             <a href="roles.html">
-                <img src="imagenes/users.png" alt=""> <span>Roles y permisos</span>
+                <img src="imagenes/users.png" alt="">
+                <span>Roles y permisos</span>
             </a>
+
             <a href="productos.html">
-                <img src="imagenes/products.png" alt=""> <span>Productos</span>
+                <img src="imagenes/products.png" alt="">
+                <span>Productos</span>
             </a>
+
             <a href="ventas.html">
-                <img src="imagenes/ventas.png" alt=""> <span>Ventas</span>
+                <img src="imagenes/ventas.png" alt="">
+                <span>Ventas</span>
             </a>
+
             <a href="inventario.html">
-                <img src="imagenes/inventario.png" alt=""> <span>Inventario</span>
+                <img src="imagenes/inventario.png" alt="">
+                <span>Inventario</span>
             </a>
+
             <a href="proveedores.html">
-                <img src="imagenes/proveedores.png" alt=""> <span>Proveedores</span>
+                <img src="imagenes/proveedores.png" alt="">
+                <span>Proveedores</span>
             </a>
+
             <a href="reportes.html" class="activo">
-                <img src="imagenes/reportes.png" alt=""> <span>Reportes</span>
+                <img src="imagenes/reportes.png" alt="">
+                <span>Reportes</span>
             </a>
+          <a href="pedidos.html">
+    <img src="imagenes/pedidos.png" alt="">
+    <span>Pedidos</span>
+</a>
             <a href="configuracion.html">
-                <img src="imagenes/configuracion.png" alt=""> <span>Configuración</span>
+                <img src="imagenes/configuracion.png" alt="">
+                <span>Configuración</span>
             </a>
+
         </nav>
+
         <!-- PERFIL -->
         <div class="perfil-sidebar">
-            <i class="perfil-icono"></i>
-            <div class="perfil-texto">
-                <strong>Admin</strong>
-                <small>Administrador</small>
-            </div>
-        </div>
+
+    <div class="perfil-icono"></div>
+
+    <div class="perfil-texto">
+        <strong>Admin</strong>
+        <small>Administrador</small>
+    </div>
+
+</div>
+
     </aside>
+
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="contenido-principal">
+
+        <!-- ENCABEZADO -->
         <header class="encabezado-superior">
-            <div><h1 class="titulo">Reportes y Estadísticas</h1><p class="inventario-descripcion">Analítica general de ventas, inventario e ingresos</p></div>
+
+            <div>
+                <h1 class="titulo">Reportes y estadísticas</h1>
+
+                <p class="inventario-descripcion">
+                    Consulta el rendimiento y la información general de tu tienda.
+                </p>
+            </div>
+
             <a href="perfil.html" class="avatar">L</a>
+
         </header>
-        <div class="cuadricula dos-columnas">
-            <div class="tarjeta-modulo bloque-naranja reporte-card">
-                <h2 class="titulo-seccion-card">Ventas por día</h2>
-                <div class="caja-blanca reporte-box"><div class="grafica-barras-contenedor"><div class="barra-item"><span class="barra-valor">$1.2k</span><div class="barra-fill" style="height: 40%;"></div><span class="barra-dia">Lun</span></div><div class="barra-item"><span class="barra-valor">$1.5k</span><div class="barra-fill" style="height: 50%;"></div><span class="barra-dia">Mar</span></div><div class="barra-item"><span class="barra-valor">$1.4k</span><div class="barra-fill" style="height: 48%;"></div><span class="barra-dia">Mié</span></div><div class="barra-item"><span class="barra-valor">$1.9k</span><div class="barra-fill" style="height: 63%;"></div><span class="barra-dia">Jue</span></div><div class="barra-item"><span class="barra-valor">$2.4k</span><div class="barra-fill" style="height: 80%;"></div><span class="barra-dia">Vie</span></div><div class="barra-item destacado"><span class="barra-valor">$3.0k</span><div class="barra-fill" style="height: 100%;"></div><span class="barra-dia">Sáb</span></div><div class="barra-item"><span class="barra-valor">$2.1k</span><div class="barra-fill" style="height: 72%;"></div><span class="barra-dia">Dom</span></div></div></div>
+
+
+        <!-- FILTROS -->
+        <section class="tarjeta-modulo filtros-reportes">
+
+            <div class="titulo-filtros">
+                <h2>Filtros de consulta</h2>
+                <p>Selecciona la información que deseas consultar.</p>
             </div>
-            <div class="tarjeta-modulo bloque-celeste reporte-card">
-                <h2 class="titulo-seccion-card">Ventas por categoría</h2>
-                <div class="caja-blanca reporte-box flex-center"><div class="donut-chart"><div class="donut-centro"><strong>100%</strong><small>Total</small></div></div><div class="categorias-leyenda"><div class="item-leyenda"><span class="dot dc"></span> DC Comics <strong>35%</strong></div><div class="item-leyenda"><span class="dot manga"></span> Manga <strong>30%</strong></div><div class="item-leyenda"><span class="dot marvel"></span> Marvel <strong>25%</strong></div><div class="item-leyenda"><span class="dot otros"></span> Otros <strong>10%</strong></div></div></div>
+
+            <div class="campos-filtros">
+
+                <div class="campo-filtro">
+                    <label>Periodo</label>
+
+                    <select>
+                        <option>Este mes</option>
+                        <option>Últimos 7 días</option>
+                        <option>Últimos 30 días</option>
+                        <option>Últimos 3 meses</option>
+                        <option>Este año</option>
+                        <option>Personalizado</option>
+                    </select>
+                </div>
+
+                <div class="campo-filtro">
+                    <label>Tipo de reporte</label>
+
+                    <select>
+                        <option>Todos los reportes</option>
+                        <option>Ventas</option>
+                        <option>Inventario</option>
+                        <option>Productos</option>
+                        <option>Proveedores</option>
+                        <option>Usuarios</option>
+                    </select>
+                </div>
+
+                <div class="campo-filtro">
+                    <label>Fecha inicial</label>
+                    <input type="date">
+                </div>
+
+                <div class="campo-filtro">
+                    <label>Fecha final</label>
+                    <input type="date">
+                </div>
+
+                <button type="button" class="btn-consultar">
+                    Consultar
+                </button>
+
             </div>
-        </div>
-        <div class="cuadricula tres-columnas reportes-inferiores">
-            <div class="tarjeta-modulo bloque-celeste reporte-card">
-                <h2 class="titulo-seccion-card">Estado del inventario</h2>
-                <div class="caja-blanca reporte-mini-box"><div class="item-barra-inventario"><div class="label-inv"><span>Disponible</span> <strong>1,426 (85%)</strong></div><div class="track"><div class="fill verde" style="width: 85%;"></div></div></div><div class="item-barra-inventario"><div class="label-inv"><span>Poco stock</span> <strong>21 (10%)</strong></div><div class="track"><div class="fill naranja" style="width: 10%;"></div></div></div><div class="item-barra-inventario"><div class="label-inv"><span>Agotado</span> <strong>12 (5%)</strong></div><div class="track"><div class="fill rojo" style="width: 5%;"></div></div></div></div>
+
+        </section>
+
+
+        <!-- RESUMEN GENERAL -->
+        <section class="seccion-reportes">
+
+            <div class="encabezado-reporte">
+                <div>
+                    <h2>Resumen general</h2>
+                    <p>Indicadores principales de Weirdo Comics.</p>
+                </div>
             </div>
-            <div class="tarjeta-modulo bloque-naranja reporte-card">
-                <h2 class="titulo-seccion-card">Pedidos por proveedor</h2>
-                <div class="caja-blanca reporte-mini-box"><div class="item-horizontal"><span>Panini</span><div class="track-h"><div class="fill-h" style="width: 100%;"></div></div><strong>45</strong></div><div class="item-horizontal"><span>ECC</span><div class="track-h"><div class="fill-h" style="width: 65%;"></div></div><strong>30</strong></div><div class="item-horizontal"><span>Ivrea</span><div class="track-h"><div class="fill-h" style="width: 50%;"></div></div><strong>22</strong></div><div class="item-horizontal"><span>Kamite</span><div class="track-h"><div class="fill-h" style="width: 35%;"></div></div><strong>15</strong></div></div>
+
+            <div class="indicadores-reportes">
+
+                <div class="indicador-reporte">
+
+                    <div class="indicador-icono icono-ventas">
+                        <img src="imagenes/ventas1.png" alt="Ventas">
+                    </div>
+
+                    <div>
+                        <span>Ventas totales</span>
+                        <h3>$48,650.00</h3>
+                        <small class="dato-positivo">+12.5% respecto al periodo anterior</small>
+                    </div>
+
+                </div>
+
+                <div class="indicador-reporte">
+
+                    <div class="indicador-icono icono-ingresos">
+                        <img src="imagenes/ingresos.png" alt="Ingresos">
+                    </div>
+
+                    <div>
+                        <span>Ingresos del periodo</span>
+                        <h3>$36,420.00</h3>
+                        <small class="dato-positivo">+8.2% respecto al periodo anterior</small>
+                    </div>
+
+                </div>
+
+                <div class="indicador-reporte">
+
+                    <div class="indicador-icono icono-productos">
+                        <img src="imagenes/products.png" alt="Productos">
+                    </div>
+
+                    <div>
+                        <span>Productos registrados</span>
+                        <h3>1,459</h3>
+                        <small>Inventario total registrado</small>
+                    </div>
+
+                </div>
+
+                <div class="indicador-reporte">
+
+                    <div class="indicador-icono icono-usuarios">
+                        <img src="imagenes/users.png" alt="Usuarios">
+                    </div>
+
+                    <div>
+                        <span>Usuarios activos</span>
+                        <h3>12</h3>
+                        <small>Usuarios registrados en el sistema</small>
+                    </div>
+
+                </div>
+
             </div>
-            <div class="tarjeta-modulo bloque-rosa reporte-card">
-                <h2 class="titulo-seccion-card">Ingresos por mes</h2>
-                <div class="caja-blanca reporte-mini-box"><div class="grafica-ingresos-svg"><svg viewBox="0 0 300 120" class="svg-curva"><defs><linearGradient id="gradIngresos" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4DD0E1" stop-opacity="0.6"/><stop offset="100%" stop-color="#4DD0E1" stop-opacity="0"/></linearGradient></defs><path d="M 0,100 Q 50,20 100,70 T 200,30 T 300,10 L 300,120 L 0,120 Z" fill="url(#gradIngresos)"/><path d="M 0,100 Q 50,20 100,70 T 200,30 T 300,10" fill="none" stroke="#C43D32" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="70" r="4" fill="#C43D32"/><circle cx="200" cy="30" r="4" fill="#C43D32"/><circle cx="296" cy="11" r="5" fill="#C43D32"/></svg><div class="meses-labels"><span>Ago</span><span>Sep</span><span>Oct</span><span>Nov</span></div></div></div>
+
+        </section>
+
+
+        <!-- GRAFICAS DE VENTAS -->
+        <section class="seccion-reportes">
+
+            <div class="encabezado-reporte">
+                <div>
+                    <h2>Rendimiento de ventas</h2>
+                    <p>Comportamiento de las ventas durante el periodo.</p>
+                </div>
             </div>
-        </div>
+
+            <div class="reportes-dos-columnas">
+
+                <!-- VENTAS POR MES -->
+                <div class="tarjeta-modulo grafica-reporte">
+
+                    <div class="titulo-grafica">
+                        <div>
+                            <h3>Ventas por mes</h3>
+                            <p>Importe de ventas registradas</p>
+                        </div>
+
+                        <span class="etiqueta-grafica">Mensual</span>
+                    </div>
+
+                    <div class="grafica-columnas">
+
+                        <div class="columna-grafica">
+                            <strong>$18k</strong>
+                            <div class="barra-grafica" style="height: 40%;"></div>
+                            <span>Ene</span>
+                        </div>
+
+                        <div class="columna-grafica">
+                            <strong>$24k</strong>
+                            <div class="barra-grafica" style="height: 55%;"></div>
+                            <span>Feb</span>
+                        </div>
+
+                        <div class="columna-grafica">
+                            <strong>$21k</strong>
+                            <div class="barra-grafica" style="height: 48%;"></div>
+                            <span>Mar</span>
+                        </div>
+
+                        <div class="columna-grafica">
+                            <strong>$30k</strong>
+                            <div class="barra-grafica" style="height: 70%;"></div>
+                            <span>Abr</span>
+                        </div>
+
+                        <div class="columna-grafica">
+                            <strong>$27k</strong>
+                            <div class="barra-grafica" style="height: 62%;"></div>
+                            <span>May</span>
+                        </div>
+
+                        <div class="columna-grafica">
+                            <strong>$36k</strong>
+                            <div class="barra-grafica" style="height: 85%;"></div>
+                            <span>Jun</span>
+                        </div>
+
+                        <div class="columna-grafica">
+                            <strong>$42k</strong>
+                            <div class="barra-grafica barra-destacada" style="height: 100%;"></div>
+                            <span>Jul</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VENTAS POR CATEGORIA -->
+                <div class="tarjeta-modulo grafica-reporte">
+
+                    <div class="titulo-grafica">
+                        <div>
+                            <h3>Ventas por categoría</h3>
+                            <p>Distribución de productos vendidos</p>
+                        </div>
+                    </div>
+
+                    <div class="categorias-reporte">
+
+                        <div class="categoria-reporte">
+                            <div class="categoria-info">
+                                <span class="punto-categoria manga"></span>
+                                <span>Manga</span>
+                                <strong>40%</strong>
+                            </div>
+
+                            <div class="barra-categoria">
+                                <div class="relleno-categoria manga-relleno" style="width: 40%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="categoria-reporte">
+                            <div class="categoria-info">
+                                <span class="punto-categoria marvel"></span>
+                                <span>Marvel</span>
+                                <strong>30%</strong>
+                            </div>
+
+                            <div class="barra-categoria">
+                                <div class="relleno-categoria marvel-relleno" style="width: 30%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="categoria-reporte">
+                            <div class="categoria-info">
+                                <span class="punto-categoria dc"></span>
+                                <span>DC Comics</span>
+                                <strong>20%</strong>
+                            </div>
+
+                            <div class="barra-categoria">
+                                <div class="relleno-categoria dc-relleno" style="width: 20%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="categoria-reporte">
+                            <div class="categoria-info">
+                                <span class="punto-categoria otros"></span>
+                                <span>Otros</span>
+                                <strong>10%</strong>
+                            </div>
+
+                            <div class="barra-categoria">
+                                <div class="relleno-categoria otros-relleno" style="width: 10%;"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTOS MAS VENDIDOS -->
+        <section class="seccion-reportes">
+
+            <div class="encabezado-reporte">
+                <div>
+                    <h2>Productos más vendidos</h2>
+                    <p>Artículos con mayor número de ventas.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-modulo tabla-reporte">
+
+                <div class="contenedor-tabla">
+
+                    <table class="tabla-gestion">
+
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Unidades vendidas</th>
+                                <th>Ingresos generados</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>One Piece Vol. 1</td>
+                                <td>Manga</td>
+                                <td>86</td>
+                                <td>$21,500.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>Spider-Man Vol. 1</td>
+                                <td>Marvel</td>
+                                <td>64</td>
+                                <td>$15,360.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>Batman: Año Uno</td>
+                                <td>DC Comics</td>
+                                <td>52</td>
+                                <td>$13,000.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>Jujutsu Kaisen Vol. 1</td>
+                                <td>Manga</td>
+                                <td>45</td>
+                                <td>$11,250.00</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVENTARIO -->
+        <section class="seccion-reportes">
+
+            <div class="encabezado-reporte">
+                <div>
+                    <h2>Reporte de inventario</h2>
+                    <p>Disponibilidad y estado de los productos.</p>
+                </div>
+            </div>
+
+            <div class="reportes-tres-columnas">
+
+                <div class="resumen-inventario">
+                    <span class="estado-inventario disponible"></span>
+
+                    <div>
+                        <span>Disponibles</span>
+                        <h3>1,426</h3>
+                        <small>Productos en existencia</small>
+                    </div>
+                </div>
+
+                <div class="resumen-inventario">
+                    <span class="estado-inventario poco-stock"></span>
+
+                    <div>
+                        <span>Poco stock</span>
+                        <h3>21</h3>
+                        <small>Requieren reposición</small>
+                    </div>
+                </div>
+
+                <div class="resumen-inventario">
+                    <span class="estado-inventario agotado"></span>
+
+                    <div>
+                        <span>Agotados</span>
+                        <h3>12</h3>
+                        <small>Sin existencias</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REPORTE DE PROVEEDORES -->
+        <section class="seccion-reportes">
+
+            <div class="encabezado-reporte">
+                <div>
+                    <h2>Reporte de proveedores</h2>
+                    <p>Información de proveedores y productos suministrados.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-modulo tabla-reporte">
+
+                <div class="contenedor-tabla">
+
+                    <table class="tabla-gestion">
+
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Proveedor</th>
+                                <th>Productos registrados</th>
+                                <th>Pedidos realizados</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>PRO-001</td>
+                                <td>Editorial Panini</td>
+                                <td>19</td>
+                                <td>45</td>
+                                <td>
+                                    <span class="estado-tabla activo">Activo</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PRO-002</td>
+                                <td>Marvel Distribución</td>
+                                <td>35</td>
+                                <td>30</td>
+                                <td>
+                                    <span class="estado-tabla activo">Activo</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PRO-003</td>
+                                <td>DC Comics MX</td>
+                                <td>40</td>
+                                <td>22</td>
+                                <td>
+                                    <span class="estado-tabla activo">Activo</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PRO-004</td>
+                                <td>Manga House</td>
+                                <td>10</td>
+                                <td>15</td>
+                                <td>
+                                    <span class="estado-tabla inactivo">Inactivo</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REPORTE DE USUARIOS -->
+        <section class="seccion-reportes">
+
+            <div class="encabezado-reporte">
+                <div>
+                    <h2>Reporte de usuarios</h2>
+                    <p>Distribución de usuarios según sus roles y actividad.</p>
+                </div>
+            </div>
+
+            <div class="reportes-dos-columnas">
+
+                <div class="tarjeta-modulo grafica-reporte">
+
+                    <div class="titulo-grafica">
+                        <div>
+                            <h3>Usuarios por rol</h3>
+                            <p>Distribución de cuentas registradas.</p>
+                        </div>
+                    </div>
+
+                    <div class="usuarios-roles">
+
+                        <div class="rol-reporte">
+                            <span>Administrador</span>
+
+                            <div class="barra-categoria">
+                                <div class="relleno-rol admin-rol" style="width: 20%;"></div>
+                            </div>
+
+                            <strong>2</strong>
+                        </div>
+
+                        <div class="rol-reporte">
+                            <span>Vendedor</span>
+
+                            <div class="barra-categoria">
+                                <div class="relleno-rol vendedor-rol" style="width: 60%;"></div>
+                            </div>
+
+                            <strong>6</strong>
+                        </div>
+
+                        <div class="rol-reporte">
+                            <span>Inventario</span>
+
+                            <div class="barra-categoria">
+                                <div class="relleno-rol inventario-rol" style="width: 40%;"></div>
+                            </div>
+
+                            <strong>4</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta-modulo grafica-reporte">
+
+                    <div class="titulo-grafica">
+                        <div>
+                            <h3>Actividad de usuarios</h3>
+                            <p>Estado de las cuentas registradas.</p>
+                        </div>
+                    </div>
+
+                    <div class="actividad-usuarios">
+
+                        <div>
+                            <span class="actividad-punto conectado"></span>
+                            <span>Usuarios activos</span>
+                            <strong>10</strong>
+                        </div>
+
+                        <div>
+                            <span class="actividad-punto desconectado"></span>
+                            <span>Usuarios inactivos</span>
+                            <strong>2</strong>
+                        </div>
+
+                        <div>
+                            <span class="actividad-punto nuevo"></span>
+                            <span>Nuevos usuarios del periodo</span>
+                            <strong>3</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPORTAR REPORTES -->
+        <section class="seccion-reportes">
+
+            <div class="tarjeta-modulo exportar-reportes">
+
+                <div class="titulo-exportar">
+
+                    <div>
+                        <h2>Exportar reportes</h2>
+                        <p>Descarga la información para consultarla o compartirla.</p>
+                    </div>
+
+                    <span class="icono-exportar">
+                        <img src="imagenes/exportar.png" alt="Exportar">
+                    </span>
+
+                </div>
+
+                <div class="opciones-exportacion">
+
+                    <div class="opcion-exportacion">
+
+                        <div>
+                            <strong>Reporte PDF</strong>
+                            <small>Documento para visualizar e imprimir.</small>
+                        </div>
+
+                        <a href="#" class="btn-pdf">Descargar PDF</a>
+
+                    </div>
+
+                    <div class="opcion-exportacion">
+
+                        <div>
+                            <strong>Reporte Excel</strong>
+                            <small>Archivo .xlsx para organizar y analizar datos.</small>
+                        </div>
+
+                        <a href="#" class="btn-excel">Descargar Excel</a>
+
+                    </div>
+
+                    <div class="opcion-exportacion">
+
+                        <div>
+                            <strong>Reporte CSV</strong>
+                            <small>Archivo compatible con hojas de cálculo.</small>
+                        </div>
+
+                        <a href="#" class="btn-csv">Descargar CSV</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PIE DE PAGINA -->
+        <footer class="pie-reportes">
+            Weirdo Comics | Área de reportes y estadísticas
+        </footer>
 
     </main>
 
 </div>
+
 </body>
 </html>

@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Editar producto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor-app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="menu-lateral">
+
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                <img src="imagenes/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a href="usuarios.html">
+                <img src="imagenes/usuarioa.png" alt="">
+                <span>Usuarios</span>
+            </a>
+
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt="">
+                <span>Roles y permisos</span>
+            </a>
+
+            <a href="productos.html" class="activo">
+                <img src="imagenes/products.png" alt="">
+                <span>Productos</span>
+            </a>
+
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt="">
+                <span>Ventas</span>
+            </a>
+
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt="">
+                <span>Inventario</span>
+            </a>
+
+            <a href="proveedores.html">
+                <img src="imagenes/proveedores.png" alt="">
+                <span>Proveedores</span>
+            </a>
+
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt="">
+                <span>Configuración</span>
+            </a>
+
+        </nav>
+
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+            <i class="perfil-icono"></i>
+
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+
+        <!-- ENCABEZADO -->
+        <header class="encabezado-superior">
+
+            <div>
+                <h1 class="titulo">Editar producto</h1>
+                <p class="inventario-descripcion">
+                    Modifica la información del producto seleccionado
+                </p>
+            </div>
+
+            <a href="perfil.html" class="avatar">L</a>
+
+        </header>
+
+
+        <!-- FORMULARIO -->
+        <section class="tarjeta-modulo bloque-cian formulario-producto">
+
+            <h2 class="titulo-seccion">Información del producto</h2>
+
+            <!-- IMAGEN DEL PRODUCTO -->
+            <div class="imagen-producto">
+                <img src="imagenes/onepiece.jpg" alt="One Piece Vol. 1">
+            </div>
+
+            <form id="formularioProducto">
+
+                <div class="campos-producto">
+
+                    <!-- ID -->
+                    <div class="campo-producto">
+                        <label>ID del producto</label>
+                        <input type="text" value="PRD-001" readonly>
+                    </div>
+
+                    <!-- NOMBRE -->
+                    <div class="campo-producto">
+                        <label>Nombre del producto</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            value="One Piece Vol. 1"
+                            required
+                        >
+                    </div>
+
+                    <!-- CATEGORÍA -->
+                    <div class="campo-producto">
+                        <label>Categoría</label>
+                        <select id="categoria" required>
+                            <option value="Manga" selected>Manga</option>
+                            <option value="Marvel">Marvel</option>
+                            <option value="DC">DC</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <!-- EDITORIAL -->
+                    <div class="campo-producto">
+                        <label>Editorial</label>
+                        <input
+                            type="text"
+                            id="editorial"
+                            value="Panini"
+                            required
+                        >
+                    </div>
+
+                    <!-- PRECIO -->
+                    <div class="campo-producto">
+                        <label>Precio</label>
+                        <input
+                            type="number"
+                            id="precio"
+                            value="250"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+
+                    <!-- STOCK -->
+                    <div class="campo-producto">
+                        <label>Existencias</label>
+                        <input
+                            type="number"
+                            id="stock"
+                            value="42"
+                            min="0"
+                            required
+                        >
+                    </div>
+
+                    <!-- ESTADO -->
+                    <div class="campo-producto">
+                        <label>Estado</label>
+                        <select id="estado" required>
+                            <option value="Disponible" selected>Disponible</option>
+                            <option value="Poco stock">Poco stock</option>
+                            <option value="Agotado">Agotado</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- BOTONES -->
+                <div class="botones-producto">
+
+                    <a href="productos.html" class="boton-cancelar">
+                        Cancelar
+                    </a>
+
+                    <button type="submit" class="boton-guardar">
+                        Guardar cambios
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

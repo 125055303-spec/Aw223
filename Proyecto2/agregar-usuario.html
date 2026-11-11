@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Agregar usuario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor-app">
+
+    <!-- MENU LATERAL -->
+    <aside class="menu-lateral">
+
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                <img src="imagenes/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a href="usuarios.html" class="activo">
+                <img src="imagenes/usuarioa.png" alt="">
+                <span>Usuarios</span>
+            </a>
+
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt="">
+                <span>Roles y permisos</span>
+            </a>
+
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt="">
+                <span>Productos</span>
+            </a>
+
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt="">
+                <span>Ventas</span>
+            </a>
+
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt="">
+                <span>Inventario</span>
+            </a>
+
+            <a href="proveedores.html">
+                <img src="imagenes/proveedores.png" alt="">
+                <span>Proveedores</span>
+            </a>
+
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt="">
+                <span>Configuración</span>
+            </a>
+
+        </nav>
+
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+
+            <i class="perfil-icono"></i>
+
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+
+        <header class="encabezado-superior">
+
+            <div>
+                <h1 class="titulo">Agregar usuario</h1>
+
+                <p class="inventario-descripcion">
+                    Registra un nuevo usuario en el sistema
+                </p>
+            </div>
+
+            <a href="perfil.html" class="avatar">L</a>
+
+        </header>
+
+
+        <!-- FORMULARIO -->
+        <div class="distribucion">
+
+
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="columna-izquierda left">
+
+                <img class="imagen-grande big"
+                     src="imagenes/usuario.png"
+                     alt="Imagen del usuario">
+
+                <p>Imagen del usuario</p>
+
+                <small>Información del nuevo usuario</small>
+
+            </div>
+
+
+            <!-- COLUMNA DERECHA -->
+            <div class="formulario form">
+
+                <div class="campo completo">
+                    <label>Nombre completo</label>
+
+                    <input class="naranja" type="text"
+                           placeholder="Ingresa el nombre completo">
+                </div>
+
+
+                <div class="campo completo">
+                    <label>Correo electrónico</label>
+
+                    <input class="naranja" type="email"
+                           placeholder="ejemplo@correo.com">
+                </div>
+
+
+                <div class="campo">
+                    <label>Nombre de usuario</label>
+
+                    <input class="naranja" type="text"
+                           placeholder="Nombre de usuario">
+                </div>
+
+
+                <div class="campo">
+                    <label>Teléfono</label>
+
+                    <input class="naranja" type="tel"
+                           placeholder="442 123 4567">
+                </div>
+
+
+                <div class="campo">
+                    <label>Contraseña</label>
+
+                    <input class="naranja" type="password"
+                           placeholder="Ingresa una contraseña">
+                </div>
+
+
+                <div class="campo">
+                    <label>Confirmar contraseña</label>
+
+                    <input class="naranja" type="password"
+                           placeholder="Confirma la contraseña">
+                </div>
+
+
+                <div class="campo">
+                    <label>Rol del usuario</label>
+
+                    <select class="naranja">
+                        <option value="">Selecciona un rol</option>
+                        <option>Administrador</option>
+                        <option>Vendedor</option>
+                        <option>Inventario y Proveedores</option>
+                    </select>
+                </div>
+
+
+                <div class="campo">
+                    <label>Estado</label>
+
+                    <select class="naranja">
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+
+
+                <!-- BOTONES -->
+                <div class="configuracion-botones">
+
+                    <a href="usuarios.html" class="boton rosa">
+                        Cancelar
+                    </a>
+
+                    <button class="boton rosa" type="button">
+                        Guardar usuario
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

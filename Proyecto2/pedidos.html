@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Pedidos</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .resumen-pedidos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .tarjeta-pedido {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .tarjeta-pedido span {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .tarjeta-pedido h2 {
+            margin: 10px 0 5px;
+            font-size: 25px;
+        }
+
+        .filtros-pedidos {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .filtros-pedidos input,
+        .filtros-pedidos select {
+            padding: 11px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            min-width: 180px;
+        }
+
+        .imagen-producto {
+            width: 42px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .producto-pedido {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .acciones-pedido {
+            display: flex;
+            gap: 7px;
+        }
+
+        .acciones-pedido a {
+            padding: 7px 9px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 12px;
+            color: white;
+        }
+
+        .ver-pedido {
+            background: #3498db;
+        }
+
+        .editar-pedido {
+            background: #e6a23c;
+        }
+
+        .eliminar-pedido {
+            background: #df5555;
+        }
+
+        .estado-pedido {
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .pendiente {
+            background: #fff1d6;
+            color: #a66b00;
+        }
+
+        .preparacion {
+            background: #e5edff;
+            color: #3564b0;
+        }
+
+        .entregado {
+            background: #ddf5e7;
+            color: #24804b;
+        }
+
+        .cancelado {
+            background: #ffe1e1;
+            color: #b83232;
+        }
+
+        .encabezado-tabla-pedidos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .btn-nuevo-pedido {
+            background: #01CED1;
+            color: white;
+            text-decoration: none;
+            padding: 11px 17px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .resumen-pedidos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .resumen-pedidos {
+                grid-template-columns: 1fr;
+            }
+
+            .filtros-pedidos {
+                flex-direction: column;
+            }
+
+            .filtros-pedidos input,
+            .filtros-pedidos select {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="contenedor-app">
+
+    <!-- MENU LATERAL -->
+    <aside class="menu-lateral">
+
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                <img src="imagenes/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a href="usuarios.html">
+                <img src="imagenes/usuarioa.png" alt="">
+                <span>Usuarios</span>
+            </a>
+
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt="">
+                <span>Roles y permisos</span>
+            </a>
+
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt="">
+                <span>Productos</span>
+            </a>
+
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt="">
+                <span>Ventas</span>
+            </a>
+
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt="">
+                <span>Inventario</span>
+            </a>
+
+            <a href="proveedores.html">
+                <img src="imagenes/proveedores.png" alt="">
+                <span>Proveedores</span>
+            </a>
+
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt="">
+                <span>Reportes</span>
+            </a>
+ <a href="pedidos.html" class="activo">
+                <img src="imagenes/pedidos.png" alt="">
+                <span>Pedidos</span>
+            </a>
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt="">
+                <span>Configuración</span>
+            </a>
+
+        </nav>
+
+        <!-- PERFIL -->
+       <div class="perfil-sidebar">
+
+    <div class="perfil-icono"></div>
+
+    <div class="perfil-texto">
+        <strong>Admin</strong>
+        <small>Administrador</small>
+    </div>
+
+</div>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+
+        <!-- ENCABEZADO -->
+        <header class="encabezado-superior">
+
+            <div>
+                <h1 class="titulo">Gestión de pedidos</h1>
+
+                <p class="inventario-descripcion">
+                    Consulta y administra los pedidos realizados por los clientes.
+                </p>
+            </div>
+
+            <a href="perfil.html" class="avatar">L</a>
+
+        </header>
+
+
+        <!-- RESUMEN DE PEDIDOS -->
+        <section class="seccion-reportes">
+
+            <div class="encabezado-reporte">
+                <div>
+                    <h2>Resumen de pedidos</h2>
+                    <p>Estado general de los pedidos registrados.</p>
+                </div>
+            </div>
+
+            <div class="resumen-pedidos">
+
+                <div class="tarjeta-pedido">
+                    <span>Total de pedidos</span>
+                    <h2>156</h2>
+                    <small>Pedidos registrados</small>
+                </div>
+
+                <div class="tarjeta-pedido">
+                    <span>Pendientes</span>
+                    <h2>18</h2>
+                    <small>Esperando confirmación</small>
+                </div>
+
+                <div class="tarjeta-pedido">
+                    <span>En preparación</span>
+                    <h2>12</h2>
+                    <small>Pedidos en proceso</small>
+                </div>
+
+                <div class="tarjeta-pedido">
+                    <span>Entregados</span>
+                    <h2>126</h2>
+                    <small>Pedidos completados</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILTROS -->
+        <section class="tarjeta-modulo">
+
+            <div class="titulo-filtros">
+                <h2>Buscar pedidos</h2>
+                <p>Filtra los registros según la información que necesites.</p>
+            </div>
+
+            <div class="filtros-pedidos">
+
+                <input type="text" placeholder="Buscar por ID o cliente">
+
+                <select>
+                    <option>Todos los estados</option>
+                    <option>Pendiente</option>
+                    <option>En preparación</option>
+                    <option>Entregado</option>
+                    <option>Cancelado</option>
+                </select>
+
+                <input type="date">
+
+                <select>
+                    <option>Todos los métodos de pago</option>
+                    <option>Efectivo</option>
+                    <option>Tarjeta</option>
+                    <option>Transferencia</option>
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- TABLA DE PEDIDOS -->
+        <section class="seccion-reportes">
+
+            <div class="tarjeta-modulo tabla-reporte">
+
+                <div class="encabezado-tabla-pedidos">
+
+                    <div>
+                        <h2>Pedidos registrados</h2>
+                        <p>Listado general de pedidos de la tienda.</p>
+                    </div>
+
+                    <a href="nuevo-pedido.html" class="btn-nuevo-pedido">
+                        Nuevo pedido
+                    </a>
+
+                </div>
+
+                <div class="contenedor-tabla">
+
+                    <table class="tabla-gestion">
+
+                        <thead>
+                            <tr>
+                                <th>ID Pedido</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Productos</th>
+                                <th>Total</th>
+                                <th>Método de pago</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>PED-001</td>
+                                <td>María González</td>
+                                <td>10/11/2026</td>
+                                <td>
+                                    <div class="producto-pedido">
+                                        <img class="imagen-producto"
+                                             src="imagenes/onepiece.jpg"
+                                             alt="One Piece">
+                                        <span>One Piece Vol. 1</span>
+                                    </div>
+                                </td>
+                                <td>$250.00</td>
+                                <td>Tarjeta</td>
+                                <td>
+                                    <span class="estado-pedido pendiente">
+                                        Pendiente
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="acciones-pedido">
+                                        <a href="ver-pedido.html" class="ver-pedido">Ver</a>
+                                        <a href="editar-pedido.html" class="editar-pedido">Editar</a>
+                                        <a href="#" class="eliminar-pedido">Eliminar</a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PED-002</td>
+                                <td>Carlos Ramírez</td>
+                                <td>10/11/2026</td>
+                                <td>
+                                    <div class="producto-pedido">
+                                        <img class="imagen-producto"
+                                             src="imagenes/comic4.jpeg"
+                                             alt="Spider-Man">
+                                        <span>Spider-Man Vol. 1</span>
+                                    </div>
+                                </td>
+                                <td>$320.00</td>
+                                <td>Efectivo</td>
+                                <td>
+                                    <span class="estado-pedido preparacion">
+                                        En preparación
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="acciones-pedido">
+                                        <a href="ver-pedido.html" class="ver-pedido">Ver</a>
+                                        <a href="editar-pedido.html" class="editar-pedido">Editar</a>
+                                        <a href="#" class="eliminar-pedido">Eliminar</a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PED-003</td>
+                                <td>Andrea López</td>
+                                <td>09/11/2026</td>
+                                <td>
+                                    <div class="producto-pedido">
+                                        <img class="imagen-producto"
+                                             src="imagenes/comic9.jpeg"
+                                             alt="Iron Man">
+                                        <span>Iron Man: Año Uno</span>
+                                    </div>
+                                </td>
+                                <td>$180.00</td>
+                                <td>Transferencia</td>
+                                <td>
+                                    <span class="estado-pedido entregado">
+                                        Entregado
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="acciones-pedido">
+                                        <a href="ver-pedido.html" class="ver-pedido">Ver</a>
+                                        <a href="editar-pedido.html" class="editar-pedido">Editar</a>
+                                        <a href="#" class="eliminar-pedido">Eliminar</a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>PED-004</td>
+                                <td>Daniel Torres</td>
+                                <td>08/11/2026</td>
+                                <td>
+                                    <div class="producto-pedido">
+                                        <img class="imagen-producto"
+                                             src="imagenes/comic8.jpeg"
+                                             alt="Wanda Vision">
+                                        <span>Wanda Vision Vol. 1</span>
+                                    </div>
+                                </td>
+                                <td>$250.00</td>
+                                <td>Tarjeta</td>
+                                <td>
+                                    <span class="estado-pedido cancelado">
+                                        Cancelado
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="acciones-pedido">
+                                        <a href="ver-pedido.html" class="ver-pedido">Ver</a>
+                                        <a href="editar-pedido.html" class="editar-pedido">Editar</a>
+                                        <a href="#" class="eliminar-pedido">Eliminar</a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACION ADICIONAL -->
+        <section class="seccion-reportes">
+
+            <div class="tarjeta-modulo">
+
+                <h2>Información de pedidos</h2>
+
+                <p>
+                    Desde este apartado se puede consultar el estado de cada
+                    pedido, revisar los productos solicitados y verificar
+                    la información de pago y entrega.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PIE DE PAGINA -->
+        <footer class="pie-reportes">
+            Weirdo Comics | Área de gestión de pedidos
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>

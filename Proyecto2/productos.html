@@ -1,97 +1,392 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weirdo Comics - Productos</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <div class="contenedor-app">
 
     <!-- MENÚ LATERAL -->
     <aside class="menu-lateral">
+
         <div class="logo-contenedor">
             <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
         </div>
+
         <nav class="nav-menu">
             <a href="index.html">
-                <img src="imagenes/home.png" alt=""> <span>Inicio</span>
+                <img src="imagenes/home.png" alt="">
+                <span>Inicio</span>
             </a>
+
             <a href="usuarios.html">
-                <img src="imagenes/usuarioa.png" alt=""> <span>Usuarios</span>
+                <img src="imagenes/usuarioa.png" alt="">
+                <span>Usuarios</span>
             </a>
+
             <a href="roles.html">
-                <img src="imagenes/users.png" alt=""> <span>Roles y permisos</span>
+                <img src="imagenes/users.png" alt="">
+                <span>Roles y permisos</span>
             </a>
+
             <a href="productos.html" class="activo">
-                <img src="imagenes/products.png" alt=""> <span>Productos</span>
+                <img src="imagenes/products.png" alt="">
+                <span>Productos</span>
             </a>
+
             <a href="ventas.html">
-                <img src="imagenes/ventas.png" alt=""> <span>Ventas</span>
+                <img src="imagenes/ventas.png" alt="">
+                <span>Ventas</span>
             </a>
+
             <a href="inventario.html">
-                <img src="imagenes/inventario.png" alt=""> <span>Inventario</span>
+                <img src="imagenes/inventario.png" alt="">
+                <span>Inventario</span>
             </a>
+
             <a href="proveedores.html">
-                <img src="imagenes/proveedores.png" alt=""> <span>Proveedores</span>
+                <img src="imagenes/proveedores.png" alt="">
+                <span>Proveedores</span>
             </a>
+
             <a href="reportes.html">
-                <img src="imagenes/reportes.png" alt=""> <span>Reportes</span>
+                <img src="imagenes/reportes.png" alt="">
+                <span>Reportes</span>
             </a>
+          <a href="pedidos.html">
+    <img src="imagenes/pedidos.png" alt="">
+    <span>Pedidos</span>
+</a>
             <a href="configuracion.html">
-                <img src="imagenes/configuracion.png" alt=""> <span>Configuración</span>
+                <img src="imagenes/configuracion.png" alt="">
+                <span>Configuración</span>
             </a>
         </nav>
+
         <!-- PERFIL -->
         <div class="perfil-sidebar">
             <i class="perfil-icono"></i>
+
             <div class="perfil-texto">
                 <strong>Admin</strong>
                 <small>Administrador</small>
             </div>
         </div>
+
     </aside>
+
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="contenido-principal">
+
+        <!-- ENCABEZADO -->
         <header class="encabezado-superior">
-            <div><h1 class="titulo">Gestión de productos</h1><p class="inventario-descripcion">Consulta y administra el catálogo de cómics</p></div>
+
+            <div>
+                <h1 class="titulo">Gestión de productos</h1>
+                <p class="inventario-descripcion">
+                    Consulta y administra el catálogo de cómics
+                </p>
+            </div>
+
             <a href="perfil.html" class="avatar">L</a>
+
         </header>
-        <input class="buscador" type="text" placeholder="Buscar producto" style="margin-bottom:20px">
+
+
+        <!-- BUSCADOR -->
+        <input
+            class="buscador"
+            type="text"
+            id="buscador"
+            placeholder="Buscar producto"
+            style="margin-bottom:20px"
+        >
+
+
+        <!-- TARJETAS DE INFORMACIÓN -->
         <section class="cuadricula cuatro-columnas">
-            <div class="tarjeta rosa"><h3>Productos totales</h3><b>248</b></div>
-            <div class="tarjeta celeste"><h3>Disponibles</h3><b>215</b></div>
-            <div class="tarjeta rosa"><h3>Poco stock</h3><b>21</b></div>
-            <div class="tarjeta naranja"><h3>Agotados</h3><b>12</b></div>
+
+            <div class="tarjeta rosa">
+                <h3>Productos totales</h3>
+                <b id="totalProductos">248</b>
+            </div>
+
+            <div class="tarjeta celeste">
+                <h3>Disponibles</h3>
+                <b>215</b>
+            </div>
+
+            <div class="tarjeta rosa">
+                <h3>Poco stock</h3>
+                <b>21</b>
+            </div>
+
+            <div class="tarjeta naranja">
+                <h3>Agotados</h3>
+                <b>12</b>
+            </div>
+
         </section>
+
+
+        <!-- FILTROS -->
         <h2 class="filtro-titulo">Categoría</h2>
-        <div class="etiquetas"><span>Todos</span><span>Marvel</span><span>DC</span><span>Manga</span><span>Otros</span></div>
+
+        <div class="etiquetas">
+            <span>Todos</span>
+            <span>Marvel</span>
+            <span>DC</span>
+            <span>Manga</span>
+            <span>Otros</span>
+        </div>
+
+
         <h2 class="filtro-titulo">Estados</h2>
-        <div class="etiquetas"><span>Todos</span><span>Disponible</span><span>Poco stock</span><span>Agotado</span><span>Otros</span></div>
+
+        <div class="etiquetas">
+            <span>Todos</span>
+            <span>Disponible</span>
+            <span>Poco stock</span>
+            <span>Agotado</span>
+            <span>Otros</span>
+        </div>
+
+
+        <!-- CATÁLOGO -->
         <section class="tarjeta-modulo bloque-cian">
+
             <h2 class="titulo-seccion">Catálogo</h2>
+
             <div class="contenedor-tabla">
-<table class="tabla-gestion tabla-productos">
-<thead><tr><th>ID</th><th>Producto</th><th>Categoría</th><th>Editorial</th><th class="text-center">Precio</th><th class="text-center">Stock</th><th class="text-center">Estado</th></tr></thead>
-<tbody>
-<tr><td><span class="mov-id">PRD-001</span></td><td><strong>One Piece Vol. 1</strong></td><td>Manga</td><td>Panini</td><td class="text-center">$250</td><td class="text-center">42</td><td class="text-center"><span class="badge-estado">Disponible</span></td></tr>
-<tr><td><span class="mov-id">PRD-002</span></td><td><strong>Attack on Titan Vol. 1</strong></td><td>Manga</td><td>Panini</td><td class="text-center">$280</td><td class="text-center">30</td><td class="text-center"><span class="badge-estado">Disponible</span></td></tr>
-<tr><td><span class="mov-id">PRD-003</span></td><td><strong>Spider-Man Vol. 1</strong></td><td>Marvel</td><td>Panini</td><td class="text-center">$220</td><td class="text-center">18</td><td class="text-center"><span class="badge-estado">Disponible</span></td></tr>
-<tr><td><span class="mov-id">PRD-004</span></td><td><strong>Demon Slayer Vol. 1</strong></td><td>Manga</td><td>Panini</td><td class="text-center">$240</td><td class="text-center">25</td><td class="text-center"><span class="badge-estado">Disponible</span></td></tr>
-<tr><td><span class="mov-id">PRD-005</span></td><td><strong>Batman: Año Uno</strong></td><td>DC</td><td>ECC</td><td class="text-center">$320</td><td class="text-center">5</td><td class="text-center"><span class="badge-alerta">Poco stock</span></td></tr>
-<tr><td><span class="mov-id">PRD-006</span></td><td><strong>Avengers #12</strong></td><td>Marvel</td><td>Panini</td><td class="text-center">$190</td><td class="text-center">3</td><td class="text-center"><span class="badge-alerta">Poco stock</span></td></tr>
-<tr><td><span class="mov-id">PRD-007</span></td><td><strong>Naruto Vol. 4</strong></td><td>Manga</td><td>Panini</td><td class="text-center">$210</td><td class="text-center">2</td><td class="text-center"><span class="badge-alerta">Poco stock</span></td></tr>
-<tr><td><span class="mov-id">PRD-008</span></td><td><strong>Superman: Origen</strong></td><td>DC</td><td>ECC</td><td class="text-center">$300</td><td class="text-center">0</td><td class="text-center"><span class="badge-peligro">Agotado</span></td></tr>
-</tbody>
-</table>
-</div>
+
+                <table class="tabla-gestion tabla-productos">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Editorial</th>
+                            <th class="text-center">Precio</th>
+                            <th class="text-center">Stock</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaProductos">
+
+                        <tr>
+                            <td><span class="mov-id">PRD-001</span></td>
+                            <td><strong>One Piece Vol. 1</strong></td>
+                            <td>Manga</td>
+                            <td>Panini</td>
+                            <td class="text-center">$250</td>
+                            <td class="text-center">42</td>
+                            <td class="text-center">
+                                <span class="badge-estado">Disponible</span>
+                            </td>
+                            <td class="acciones-tabla">
+                                <a href="ver-producto.html?id=PRD-001" class="accion ver">Ver</a>
+                                <a href="editar-producto.html?id=PRD-001" class="accion editar">Editar</a>
+                                <button class="accion eliminar" onclick="eliminarProducto(this)">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="mov-id">PRD-002</span></td>
+                            <td><strong>Attack on Titan Vol. 1</strong></td>
+                            <td>Manga</td>
+                            <td>Panini</td>
+                            <td class="text-center">$280</td>
+                            <td class="text-center">30</td>
+                            <td class="text-center">
+                                <span class="badge-estado">Disponible</span>
+                            </td>
+                            <td class="acciones-tabla">
+                                <a href="ver-producto.html?id=PRD-002" class="accion ver">Ver</a>
+                                <a href="editar-producto.html?id=PRD-002" class="accion editar">Editar</a>
+                                <button class="accion eliminar" onclick="eliminarProducto(this)">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="mov-id">PRD-003</span></td>
+                            <td><strong>Spider-Man Vol. 1</strong></td>
+                            <td>Marvel</td>
+                            <td>Panini</td>
+                            <td class="text-center">$220</td>
+                            <td class="text-center">18</td>
+                            <td class="text-center">
+                                <span class="badge-estado">Disponible</span>
+                            </td>
+                            <td class="acciones-tabla">
+                                <a href="ver-producto.html?id=PRD-003" class="accion ver">Ver</a>
+                                <a href="editar-producto.html?id=PRD-003" class="accion editar">Editar</a>
+                                <button class="accion eliminar" onclick="eliminarProducto(this)">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="mov-id">PRD-004</span></td>
+                            <td><strong>Demon Slayer Vol. 1</strong></td>
+                            <td>Manga</td>
+                            <td>Panini</td>
+                            <td class="text-center">$240</td>
+                            <td class="text-center">25</td>
+                            <td class="text-center">
+                                <span class="badge-estado">Disponible</span>
+                            </td>
+                            <td class="acciones-tabla">
+                                <a href="ver-producto.html?id=PRD-004" class="accion ver">Ver</a>
+                                <a href="editar-producto.html?id=PRD-004" class="accion editar">Editar</a>
+                                <button class="accion eliminar" onclick="eliminarProducto(this)">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="mov-id">PRD-005</span></td>
+                            <td><strong>Batman: Año Uno</strong></td>
+                            <td>DC</td>
+                            <td>ECC</td>
+                            <td class="text-center">$320</td>
+                            <td class="text-center">5</td>
+                            <td class="text-center">
+                                <span class="badge-alerta">Poco stock</span>
+                            </td>
+                            <td class="acciones-tabla">
+                                <a href="ver-producto.html?id=PRD-005" class="accion ver">Ver</a>
+                                <a href="editar-producto.html?id=PRD-005" class="accion editar">Editar</a>
+                                <button class="accion eliminar" onclick="eliminarProducto(this)">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="mov-id">PRD-006</span></td>
+                            <td><strong>Avengers #12</strong></td>
+                            <td>Marvel</td>
+                            <td>Panini</td>
+                            <td class="text-center">$190</td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">
+                                <span class="badge-alerta">Poco stock</span>
+                            </td>
+                            <td class="acciones-tabla">
+                                <a href="ver-producto.html?id=PRD-006" class="accion ver">Ver</a>
+                                <a href="editar-producto.html?id=PRD-006" class="accion editar">Editar</a>
+                                <button class="accion eliminar" onclick="eliminarProducto(this)">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="mov-id">PRD-007</span></td>
+                            <td><strong>Naruto Vol. 4</strong></td>
+                            <td>Manga</td>
+                            <td>Panini</td>
+                            <td class="text-center">$210</td>
+                            <td class="text-center">2</td>
+                            <td class="text-center">
+                                <span class="badge-alerta">Poco stock</span>
+                            </td>
+                            <td class="acciones-tabla">
+                                <a href="ver-producto.html?id=PRD-007" class="accion ver">Ver</a>
+                                <a href="editar-producto.html?id=PRD-007" class="accion editar">Editar</a>
+                                <button class="accion eliminar" onclick="eliminarProducto(this)">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="mov-id">PRD-008</span></td>
+                            <td><strong>Superman: Origen</strong></td>
+                            <td>DC</td>
+                            <td>ECC</td>
+                            <td class="text-center">$300</td>
+                            <td class="text-center">0</td>
+                            <td class="text-center">
+                                <span class="badge-peligro">Agotado</span>
+                            </td>
+                            <td class="acciones-tabla">
+                                <a href="ver-producto.html?id=PRD-008" class="accion ver">Ver</a>
+                                <a href="editar-producto.html?id=PRD-008" class="accion editar">Editar</a>
+                                <button class="accion eliminar" onclick="eliminarProducto(this)">Eliminar</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
         </section>
-        <div class="fila-boton"><a href="agregar-producto.html"><button class="boton celeste">+ Agregar producto</button></a></div>
+
+
+        <!-- BOTÓN AGREGAR -->
+        <div class="fila-boton">
+            <a href="agregar-producto.html">
+                <button class="boton celeste">+ Agregar producto</button>
+            </a>
+        </div>
 
     </main>
 
 </div>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+// ELIMINAR PRODUCTO
+function eliminarProducto(boton) {
+
+    let confirmar = confirm("¿Estás seguro de que deseas eliminar este producto?");
+
+    if (confirmar) {
+
+        let fila = boton.closest("tr");
+
+        fila.remove();
+
+        let total = document.querySelectorAll("#tablaProductos tr").length;
+
+        document.getElementById("totalProductos").textContent = total;
+
+        alert("Producto eliminado correctamente.");
+    }
+
+}
+
+
+// BUSCAR PRODUCTOS
+document.getElementById("buscador").addEventListener("input", function() {
+
+    let texto = this.value.toLowerCase();
+
+    let filas = document.querySelectorAll("#tablaProductos tr");
+
+    filas.forEach(function(fila) {
+
+        let producto = fila.textContent.toLowerCase();
+
+        if (producto.includes(texto)) {
+            fila.style.display = "";
+        } else {
+            fila.style.display = "none";
+        }
+
+    });
+
+});
+
+</script>
+
 </body>
 </html>

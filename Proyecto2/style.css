@@ -1463,3 +1463,58 @@ h3{font-size:15px;font-weight:700}
     }
 
 }
+.header-tabla-acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.acciones-ventas {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
+}
+
+.acciones-ventas .buscador {
+    width: 380px;
+    max-width: 100%;
+    margin: 0;
+}
+
+.btn-tickets {
+    background: #FF9AA2;
+    color: white;
+    text-decoration: none;
+    padding: 12px 17px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.btn-tickets:hover {
+    background: #f27f89;
+}
+
+@media (max-width: 850px) {
+    .header-tabla-acciones {
+        align-items: flex-start;
+    }
+
+    .acciones-ventas {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .acciones-ventas .buscador {
+        flex: 1;
+        min-width: 200px;
+    }
+}

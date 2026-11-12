@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weirdo Comics - Tickets de venta</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .resumen-tickets {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .tarjeta-ticket {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .tarjeta-ticket span {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .tarjeta-ticket h2 {
+            margin: 10px 0 5px;
+            font-size: 25px;
+        }
+
+        .filtros-tickets {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .filtros-tickets input,
+        .filtros-tickets select {
+            padding: 11px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            min-width: 180px;
+        }
+
+        .estado-ticket {
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .ticket-pagado {
+            background: #ddf5e7;
+            color: #24804b;
+        }
+
+        .ticket-cancelado {
+            background: #ffe1e1;
+            color: #b83232;
+        }
+
+        .acciones-ticket {
+            display: flex;
+            gap: 7px;
+        }
+
+        .acciones-ticket a {
+            padding: 7px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 12px;
+            color: white;
+        }
+
+        .ver-ticket {
+            background: #FFCB73;
+        }
+
+        .descargar-ticket {
+            background: #01CED1;
+        }
+
+        .encabezado-tickets {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .btn-regresar {
+            background: #FF9AA2;
+            color: white;
+            text-decoration: none;
+            padding: 11px 17px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .informacion-ticket {
+            background: #FFF1DC;
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid #FFCB73;
+        }
+
+        .informacion-ticket p {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 900px) {
+            .resumen-tickets {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .resumen-tickets {
+                grid-template-columns: 1fr;
+            }
+
+            .filtros-tickets {
+                flex-direction: column;
+            }
+
+            .filtros-tickets input,
+            .filtros-tickets select {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="contenedor-app">
+
+    <!-- MENU LATERAL -->
+    <aside class="menu-lateral">
+
+        <div class="logo-contenedor">
+            <img class="logo" src="imagenes/logo.png" alt="Weirdo Comics">
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                <img src="imagenes/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a href="usuarios.html">
+                <img src="imagenes/usuarioa.png" alt="">
+                <span>Usuarios</span>
+            </a>
+
+            <a href="roles.html">
+                <img src="imagenes/users.png" alt="">
+                <span>Roles y permisos</span>
+            </a>
+
+            <a href="productos.html">
+                <img src="imagenes/products.png" alt="">
+                <span>Productos</span>
+            </a>
+
+            <a href="ventas.html">
+                <img src="imagenes/ventas.png" alt="">
+                <span>Ventas</span>
+            </a>
+
+            <a href="tickets.html" class="activo">
+                <img src="imagenes/ventas.png" alt="">
+                <span>Tickets de venta</span>
+            </a>
+
+            <a href="inventario.html">
+                <img src="imagenes/inventario.png" alt="">
+                <span>Inventario</span>
+            </a>
+
+            <a href="proveedores.html">
+                <img src="imagenes/proveedores.png" alt="">
+                <span>Proveedores</span>
+            </a>
+
+            <a href="reportes.html">
+                <img src="imagenes/reportes.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a href="pedidos.html">
+                <img src="imagenes/pedidos.png" alt="">
+                <span>Pedidos</span>
+            </a>
+
+            <a href="configuracion.html">
+                <img src="imagenes/configuracion.png" alt="">
+                <span>Configuración</span>
+            </a>
+
+        </nav>
+
+        <!-- PERFIL -->
+        <div class="perfil-sidebar">
+
+            <div class="perfil-icono"></div>
+
+            <div class="perfil-texto">
+                <strong>Admin</strong>
+                <small>Administrador</small>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
+
+        <!-- ENCABEZADO -->
+        <header class="encabezado-superior">
+
+            <div>
+                <h1 class="titulo">Tickets de venta</h1>
+
+                <p class="inventario-descripcion">
+                    Consulta los comprobantes de las ventas realizadas en la tienda.
+                </p>
+            </div>
+
+            <a href="perfil.html" class="avatar">L</a>
+
+        </header>
+
+
+        <!-- RESUMEN -->
+        <section class="seccion-reportes">
+
+            <div class="encabezado-reporte">
+                <div>
+                    <h2>Resumen de tickets</h2>
+                    <p>Información general de los comprobantes registrados.</p>
+                </div>
+            </div>
+
+            <div class="resumen-tickets">
+
+                <div class="tarjeta-ticket">
+                    <span>Total de tickets</span>
+                    <h2>248</h2>
+                    <small>Comprobantes registrados</small>
+                </div>
+
+                <div class="tarjeta-ticket">
+                    <span>Tickets pagados</span>
+                    <h2>239</h2>
+                    <small>Ventas completadas</small>
+                </div>
+
+                <div class="tarjeta-ticket">
+                    <span>Tickets cancelados</span>
+                    <h2>9</h2>
+                    <small>Ventas canceladas</small>
+                </div>
+
+                <div class="tarjeta-ticket">
+                    <span>Ingresos registrados</span>
+                    <h2>$48,650</h2>
+                    <small>Total de ventas pagadas</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILTROS -->
+        <section class="tarjeta-modulo">
+
+            <div class="titulo-filtros">
+                <h2>Buscar tickets</h2>
+                <p>Localiza comprobantes utilizando sus datos de venta.</p>
+            </div>
+
+            <div class="filtros-tickets">
+
+                <input type="text"
+                       placeholder="Buscar por folio o cliente">
+
+                <select>
+                    <option>Todos los estados</option>
+                    <option>Pagado</option>
+                    <option>Cancelado</option>
+                </select>
+
+                <select>
+                    <option>Todos los métodos de pago</option>
+                    <option>Efectivo</option>
+                    <option>Tarjeta</option>
+                    <option>Transferencia</option>
+                </select>
+
+                <input type="date">
+
+            </div>
+
+        </section>
+
+
+        <!-- TABLA DE TICKETS -->
+        <section class="seccion-reportes">
+
+            <div class="tarjeta-modulo tabla-reporte">
+
+                <div class="encabezado-tickets">
+
+                    <div>
+                        <h2>Tickets registrados</h2>
+                        <p>Listado de comprobantes de las ventas realizadas.</p>
+                    </div>
+
+                    <a href="ventas.html" class="btn-regresar">
+                        Regresar a ventas
+                    </a>
+
+                </div>
+
+
+                <div class="contenedor-tabla">
+
+                    <table class="tabla-gestion">
+
+                        <thead>
+                            <tr>
+                                <th>Folio</th>
+                                <th>Fecha</th>
+                                <th>Cliente</th>
+                                <th>Vendedor</th>
+                                <th>Productos</th>
+                                <th>Método de pago</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>TKT-001</td>
+                                <td>12/11/2026</td>
+                                <td>María González</td>
+                                <td>Laura Méndez</td>
+                                <td>2 productos</td>
+                                <td>Tarjeta</td>
+                                <td>$450.00</td>
+                                <td>
+                                    <span class="estado-ticket ticket-pagado">
+                                        Pagado
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="acciones-ticket">
+                                        <a href="ver-ticket.html" class="ver-ticket">
+                                            Ver
+                                        </a>
+
+                                        <a href="#" class="descargar-ticket">
+                                            PDF
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>TKT-002</td>
+                                <td>11/11/2026</td>
+                                <td>Carlos Ramírez</td>
+                                <td>Pedro Sánchez</td>
+                                <td>3 productos</td>
+                                <td>Efectivo</td>
+                                <td>$680.00</td>
+                                <td>
+                                    <span class="estado-ticket ticket-pagado">
+                                        Pagado
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="acciones-ticket">
+                                        <a href="ver-ticket.html" class="ver-ticket">
+                                            Ver
+                                        </a>
+
+                                        <a href="#" class="descargar-ticket">
+                                            PDF
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>TKT-003</td>
+                                <td>11/11/2026</td>
+                                <td>Andrea López</td>
+                                <td>Laura Méndez</td>
+                                <td>1 producto</td>
+                                <td>Transferencia</td>
+                                <td>$180.00</td>
+                                <td>
+                                    <span class="estado-ticket ticket-pagado">
+                                        Pagado
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="acciones-ticket">
+                                        <a href="ver-ticket.html" class="ver-ticket">
+                                            Ver
+                                        </a>
+
+                                        <a href="#" class="descargar-ticket">
+                                            PDF
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>TKT-004</td>
+                                <td>10/11/2026</td>
+                                <td>Daniel Torres</td>
+                                <td>Pedro Sánchez</td>
+                                <td>2 productos</td>
+                                <td>Tarjeta</td>
+                                <td>$320.00</td>
+                                <td>
+                                    <span class="estado-ticket ticket-cancelado">
+                                        Cancelado
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="acciones-ticket">
+                                        <a href="ver-ticket.html" class="ver-ticket">
+                                            Ver
+                                        </a>
+
+                                        <a href="#" class="descargar-ticket">
+                                            PDF
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>TKT-005</td>
+                                <td>09/11/2026</td>
+                                <td>Fernanda Ruiz</td>
+                                <td>Laura Méndez</td>
+                                <td>4 productos</td>
+                                <td>Efectivo</td>
+                                <td>$890.00</td>
+                                <td>
+                                    <span class="estado-ticket ticket-pagado">
+                                        Pagado
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="acciones-ticket">
+                                        <a href="ver-ticket.html" class="ver-ticket">
+                                            Ver
+                                        </a>
+
+                                        <a href="#" class="descargar-ticket">
+                                            PDF
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACION ADICIONAL -->
+        <section class="seccion-reportes">
+
+            <div class="tarjeta-modulo">
+
+                <div class="informacion-ticket">
+                    <p>
+                        <strong>Nota:</strong> Los tickets de venta son comprobantes oficiales que respaldan las transacciones realizadas en la tienda. Asegúrate de revisar los detalles de cada ticket antes de realizar cualquier acción.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PIE DE PAGINA -->
+        <footer class="pie-reportes">
+            Weirdo Comics | Área de gestión de tickets
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>

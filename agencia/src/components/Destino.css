@@ -1,0 +1,85 @@
+.tarjeta {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+  transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.imagen-destino {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.contenido-tarjeta {
+  padding: 18px;
+}
+
+.encabezado-tarjeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.encabezado-tarjeta h2 {
+  font-size: 20px;
+  color: #26364a;
+  margin: 0;
+}
+
+.ubicacion {
+  color: #777;
+  margin: 10px 0;
+}
+
+.precio {
+  color: #168b83;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.boton-favorito {
+  border: none;
+  background-color: #fce9ed;
+  color: #e85d75;
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.boton-favorito.activo {
+  background-color: #e85d75;
+  color: white;
+}
+
+.boton-detalles {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background-color: #168b83;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.boton-detalles:hover {
+  background-color: #116d67;
+}
+
+.detalles {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #edf8f6;
+  border-radius: 8px;
+  color: #444;
+  line-height: 1.5;
+}

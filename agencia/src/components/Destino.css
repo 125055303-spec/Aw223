@@ -38,7 +38,7 @@
 }
 
 .precio {
-  color: #168b83;
+  color: #df2ea7;
   font-weight: bold;
   font-size: 17px;
 }
@@ -64,7 +64,7 @@
   padding: 11px;
   border: none;
   border-radius: 8px;
-  background-color: #168b83;
+  background-color: #df2ea7;
   color: white;
   font-size: 14px;
   cursor: pointer;
@@ -72,7 +72,7 @@
 }
 
 .boton-detalles:hover {
-  background-color: #116d67;
+  background-color: #9f1473;
 }
 
 .detalles {

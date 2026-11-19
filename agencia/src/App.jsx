@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Destino from './components/Destino';
+import italia from './imagenes/italia.jpeg';
+import suiza from './imagenes/suiza.jpeg';
 import './App.css';
 
 function App() {
@@ -11,12 +13,14 @@ function App() {
       nombre: 'Gran Canal',
       ubicacion: 'Venecia, Italia',
       precio: 35000,
+      imagen: italia,
       descripcion: 'Disfruta de un paseo en góndola por el Gran Canal, visitando sus puentes y palacios históricos.',    },
     {
       id: 2,
       nombre: 'Pueblo Lauterbrunnen ',
       ubicacion: 'Oberland bernés,Suiza',
       precio: 12000,
+      imagen: suiza,
       descripcion: 'Conoce el encantador pueblo de Lauterbrunnen, rodeado de impresionantes acantilados y cascadas.',    },
   ];
 

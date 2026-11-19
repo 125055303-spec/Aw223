@@ -1,0 +1,125 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f8;
+}
+
+.pagina {
+  min-height: 100vh;
+}
+
+.encabezado {
+  background: linear-gradient(135deg, #9f1473, #df2ea7);
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.encabezado h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.encabezado p {
+  font-size: 16px;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.bienvenida {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bienvenida h2 {
+  color: #26364a;
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.bienvenida p {
+  color: #777;
+}
+
+.controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.controles input {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.controles input:focus {
+  border-color: #df2ea7;
+}
+
+.contador {
+  background-color: #fce9ed;
+  color: #d94e6b;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.lista-destinos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.sin-resultados {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #777;
+  padding: 30px;
+}
+
+footer {
+  background-color: #df2ea7;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  margin-top: 40px;
+}
+
+@media (max-width: 800px) {
+  .lista-destinos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .lista-destinos {
+    grid-template-columns: 1fr;
+  }
+
+  .controles {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .encabezado h1 {
+    font-size: 25px;
+  }
+}

@@ -1,33 +1,70 @@
-from flask import Blueprint
+from flask import Blueprint, request, jsonify
+from Models.modelEstudiante import *
 
-controladorAlumnoBP=Blueprint('controlador',__name__)
+controladorAlumnoBP = Blueprint('controlador', __name__)
 
-#ruta de inicio
-
+# RUTA DE INICIO
 @controladorAlumnoBP.route('/')
 def inicio():
     return "Hola soy el backend de Alumno"
 
-#ruta para insert
 
+# INSERTAR ESTUDIANTE
 @controladorAlumnoBP.route('/guardarAlumno', methods=['POST'])
 def guardar():
-    return'Se guardo el alumno'
+    nombreReq = request.form.get('txtNombre', '').strip()
+    carreraReq = request.form.get('txtCarrera', '').strip()
 
-#ruta para consultar todo
+    try:
+        insertEstudiante(nombreReq, carreraReq)
+        return jsonify({"Completado": "Estudiante Guardado"}), 200
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500
 
+
+# CONSULTAR TODOS
 @controladorAlumnoBP.route('/consultatodo', methods=['GET'])
 def consultatodo():
-    return'Se consulto todo'
+    try:
+        consulta = selectAll()
+        return jsonify(consulta), 200
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500
 
-#ruta para actualizar
 
-@controladorAlumnoBP.route('/actualizarAlumno', methods=['PUT'])
-def actualizar():
-    return'Se actualizo el alumno'
+# CONSULTAR POR ID
+@controladorAlumnoBP.route('/consultarPorId/<int:id>', methods=['GET'])
+def consultarPorId(id):
+    try:
+        consulta = selectById(id)
 
-#ruta para eliminar
+        if consulta:
+            return jsonify(consulta), 200
+        else:
+            return jsonify({"Mensaje": "Estudiante no encontrado"}), 404
 
-@controladorAlumnoBP.route('/eliminarAlumno', methods=['DELETE'])
-def eliminar():
-    return'Se elimino el alumno'
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500
+
+
+# ACTUALIZAR ESTUDIANTE
+@controladorAlumnoBP.route('/actualizarAlumno/<int:id>', methods=['PUT'])
+def actualizar(id):
+    nombreReq = request.form.get('txtNombre', '').strip()
+    carreraReq = request.form.get('txtCarrera', '').strip()
+
+    try:
+        updateEstudiante(id, nombreReq, carreraReq)
+        return jsonify({"Completado": "Estudiante Actualizado"}), 200
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500
+
+
+# ELIMINAR ESTUDIANTE
+@controladorAlumnoBP.route('/eliminarAlumno/<int:id>', methods=['DELETE'])
+def eliminar(id):
+    try:
+        softDeleteEstudiante(id)
+        return jsonify({"Completado": "Estudiante Eliminado"}), 200
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500
